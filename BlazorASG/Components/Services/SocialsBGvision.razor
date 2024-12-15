@@ -1,0 +1,210 @@
+﻿<style>
+		.ms-n8 {
+			margin-left: -8rem !important;
+		}
+
+		.mt-n5 {
+			margin-top: -3rem !important;
+		}
+
+		.start-0 {
+			left: 0 !important;
+		}
+
+		.top-0 {
+			top: 0 !important;
+		}
+
+		.position-absolute {
+			position: absolute !important;
+		}
+
+		.bg-secondary-grad {
+			background: -webkit-gradient(linear, left top, right top, from(rgba(240, 150, 255, 0.15)), color-stop(51%, rgba(191, 200, 252, 0.15)), to(rgba(187, 148, 255, 0.15)));
+			/* background: linear-gradient(90deg, rgba(240, 150, 255, 0.15) 0%, rgba(191, 200, 252, 0.15) 51%, rgba(187, 148, 255, 0.15) 100%); */
+		}
+
+		.mt-n5 {
+			margin-top: -3rem !important;
+		}
+
+		.me-7 {
+			margin-right: 6rem !important;
+		}
+
+		.end-0 {
+			right: 0 !important;
+		}
+
+		.top-0 {
+			top: 0 !important;
+		}
+
+		.position-absolute {
+			position: absolute !important;
+		}
+
+		.h-500px {
+			height: 500px !important;
+		}
+
+		*, *::before, *::after {
+			-webkit-box-sizing: border-box;
+			 box-sizing: border-box;
+		}
+
+		.list-inline-item:not(:last-child) {
+			margin-right: 0.5rem;
+		}
+
+		.heading-color {
+			color: var(--bs-gray-900) !important;
+		}
+
+		.list-inline-item {
+			display: inline-block;
+		}
+		ورقة أنماط وكيل المستخدم
+		div {
+			display: block;
+			unicode-bidi: isolate;
+		}
+		.opacity-3 {
+			opacity: 0.3 !important;
+		}
+		.opacity-1 {
+			opacity: 0.1 !important;
+		}
+
+		.h-300px {
+			height: 300px !important;
+		}
+		.spanconta {
+			max-width: 1200px;
+			margin: auto;
+			padding: 100px;
+		}
+
+		.position-relative {
+			position: relative !important;
+		}
+
+		.overflow-hidden {
+			overflow: hidden !important;
+		}
+
+		.rotate-343 {
+			/* -webkit-transform: rotate(343deg) !important; */
+			transform: rotate(343deg) !important;
+		}
+
+		.position-absolute {
+			position: absolute !important;
+		}
+
+		.align-items-center {
+			-webkit-box-align: center !important;
+			-ms-flex-align: center !important;
+			align-items: center !important;
+		}
+
+		.position-relative {
+			position: relative !important;
+		}
+
+		.overflow-hidden {
+			overflow: hidden !important;
+		}
+
+		.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+			--bs-gutter-x: 1.875rem;
+			--bs-gutter-y: 0;
+			width: 100%;
+			padding-right: calc(var(--bs-gutter-x)* 0.5);
+			padding-left: calc(var(--bs-gutter-x)* 0.5);
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.bi-check-circle::before {
+			content: "\f26b";
+		}
+		.text-success {
+		--bs-text-opacity: 1;
+		color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+	}
+	.me-1 {
+		margin-right: 0.25rem !important;
+	}
+		.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+			display: inline-block;
+			font-family: bootstrap-icons !important;
+			font-style: normal;
+			font-weight: normal !important;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			vertical-align: -.125em;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		.h-2-2{
+			color:black
+		}
+</style>
+
+@if (Params != null)
+{
+	<section class="pt-0 ">
+		<div class="container">
+			<div class="bg-secondary-grad position-relative rounded-3 overflow-hidden p-4 p-sm-6">
+
+				<!-- BG pattern -->
+				<div class="position-absolute end-0 top-0 rotate-343 mt-n5 me-7 d-none d-sm-block">
+					<img src="@Params.ImageUrl" class="h-500px opacity-3" alt="bg pattern">
+				</div>
+
+				<!-- BG pattern -->
+				<div class="position-absolute start-0 top-0 rotate-343 mt-n5 ms-n8">
+					<img src="@Params.ImageUrl" class="h-300px opacity-1" alt="bg pattern">
+				</div>
+
+				<div class="row g-4 align-items-center position-relative spanconta">
+					<!-- Title and list -->
+					<div class="col-xl-6">
+						<h2 class="h-2-2">Ready to transform your <span class="text-primary-grad">vision</span> into reality?</h2>
+						<ul class="list-inline d-flex flex-wrap gap-2 mb-0 mt-3">
+							<li class="list-inline-item heading-color">
+								<i class="bi bi-check-circle text-success me-1"></i>@Params.Description
+							</li>
+							<li class="list-inline-item heading-color"> <i class="bi bi-check-circle text-success me-1"></i> @Params.ButtonText</li>
+						</ul>
+					</div>
+
+					<!-- Button -->
+					<div class="col-xl-6 text-xl-end">
+
+						<a href="@Params.ButtonLink" class="btn btn-dark mb-0">@Params.Details</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+}
+@code {
+	[Parameter] public CardTextAndIcon? Params { get; set; }
+
+
+
+	// إذا كنت بحاجة إلى منطق إضافي، يمكنك إضافته هنا
+	protected override void OnInitialized()
+	{
+
+		if (Params != null && Params.IsUseStyleIneerItems)
+		{
+			Params.ClassItems += " " + CardTextAndIcon.INEERCLASS;
+		}
+
+
+	}
+}

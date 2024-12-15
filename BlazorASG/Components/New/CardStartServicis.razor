@@ -1,0 +1,4508 @@
+﻿@* <style>
+    /* =======================
+               Weather Page Styling
+            ========================== */
+
+    /* Section Styling */
+    .position-relative {
+        position: relative;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    /* Padding for the section */
+    .pt-xl-9 {
+        padding-top: 1rem !important;
+    }
+
+
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    /* Decoration Styling (Blur and Weather Info) */
+    .blur-9 {
+        width: 100%;
+        height: auto;
+    }
+
+    .opacity-2 {
+        opacity: 0.2; /* Low opacity for blur decoration */
+    }
+
+    .position-absolute {
+        position: absolute;
+    }
+
+    .mt-8 {
+        margin-top: 3rem;
+    }
+
+    .me-n5 {
+        margin-right: -1.5rem; /* Adjust margin for positioning */
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .d-xl-block {
+        display: block !important; /* Make the weather info visible only on XL screens */
+    }
+
+    .mx-xl-5 {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .ms-xxl-9 {
+        margin-left: 5rem;
+    }
+
+    .rotate-335 {
+        transform: rotate(335deg); /* Rotate weather decoration */
+    }
+
+    /* Title and Content Styling */
+    /* 	.inner-container {
+                text-align: center !i;
+                align-items: center;
+                margin-top: 5rem;
+                margin-bottom: 8rem;
+            } */
+
+    .inner-container {
+        text-align: center !important;
+        align-items: center !important;
+        margin-top: 5rem !important;
+        margin-bottom: 8rem !important;
+    }
+
+    .display-5 {
+        font-size: 3rem; /* Title font size */
+        font-weight: 700;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem; /* Bottom margin for title */
+    }
+
+    .w-75 {
+        width: 75%; /* Adjust the width of the paragraph */
+    }
+
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem; /* Bottom margin for paragraph */
+    }
+
+    /* Button Styling */
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue for hover */
+        }
+
+    /* Product Hero Image Section */
+    .bg-secondary-grad {
+        background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+        position: relative;
+    }
+
+    /* Curve Decoration */
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .fill-body {
+        fill: #fff;
+    }
+
+    .position-absolute.top-0.start-0 {
+        top: 0;
+        left: 0;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    /* Call Decoration (notification) */
+    .ms-n6 {
+        margin-left: -1.5rem;
+    }
+
+    .mt-n9 {
+        margin-top: -3rem;
+    }
+
+    .d-sm-block {
+        display: block !important; /* Ensure it’s visible on small screens and up */
+    }
+
+    /* Product Image Styling */
+    img.mt-n6 {
+        margin-top: -1.5rem;
+    }
+
+    img.mt-md-n8 {
+        margin-top: -3rem; /* Adjust margin for larger screens */
+        max-width: 100%; /* Ensure image scales with container */
+    }
+
+    .spanconta {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+</style>
+ *@
+@* <section class="bg-dark overflow-hidden position-relative" data-bs-theme="dark">    <!-- Decoration START -->
+    <!-- Grad blur -->
+    <div class="">
+
+
+        <!-- Decoration START -->
+        <!-- Title -->
+        <div class="inner-container text-center mx-auto position-relative pt-4 pt-sm-5">
+            <!-- Breadcrumb -->
+            <nav class="mb-2 d-flex justify-content-center" aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-dark pt-0">
+                    <li class="breadcrumb-item"><a href="#"> .Name </a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Description </li>
+                </ol>
+            </nav>
+            <!-- Title -->
+            <h1 class="mb-5 text-white">Our Portfolio</h1>
+        </div>
+
+        <!-- Product hero image -->
+    </div>
+    <span class="">
+        <svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7" width="1920" height="254" viewBox="0 0 1920 254" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path class="fill-path" d="M556.048 176.63C371.384 97.9289 108.406 143.838 0 176.63V254H1920V0C1863.62 35.5602 1712.53 98.8233 1559.27 67.394C1406.01 35.9648 1206.33 86.6647 1125.65 115.943C1012.72 168.964 740.712 255.331 556.048 176.63Z"></path>
+        </svg>
+    </span>
+
+</section>
+
+<style>
+    .fill-path{
+fill: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+</style>
+ *@@* <style>
+    /* تنسيق القسم الرئيسي */
+.section-landing-hero {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    font-family: 'Cairo', sans-serif; /* يمكنك تغيير الخط حسب الحاجة */
+}
+
+/* الحاوية */
+/* .container- {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+} */
+ */
+/* الصفوف */
+.row- {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* الأعمدة */
+.col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* المنطقة الخلفية مع الصورة */
+.landing-hero-area {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    padding: 200px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* النصوص المركزية */
+.landing-banner-text {
+    position: relative;
+    z-index: 2;
+}
+
+.landing-banner-title {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.landing-banner-title span {
+    display: block;
+    color: #ffdd57; /* لون مميز للنص */
+}
+
+.section-sub-heading {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* أزرار الدعوة إلى الإجراء */
+.tour-btu {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tour-btu:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+
+</style> *@
+@* <div class="section-landing-hero sf-section-landing-hero">
+    <div class="container-">
+        <div class="row-">
+            <div class="col-lg-12">
+                 <div class="landing-hero-area sf-landing-hero-area" data-background="https://plan-b-eg.com/uploads/home/1720967628-nqI9LYLf4n.jpg" style="background-image: url(&quot;https://plan-b-eg.com/uploads/home/1720967628-nqI9LYLf4n.jpg&quot;);">
+
+                        <!--<h6 class="come-for-learn-text landing-come-area">-->
+                        <!--    -->
+                        <!--        <span>الان</span>-->
+                        <!--    -->
+                        <!--        <span>تعلم</span>-->
+                        <!--    -->
+                        <!--</h6>-->
+
+                        <h1 class=" landing-banner-title">
+                            أكتسب المهارات
+                            <span>المطلوبة لسوق العمل</span>
+                            .
+                        </h1>
+                        <p class="section-sub-heading landing-sub-heading">تعلم من الخبراء واكتسب مهارات جديدة تفتح لك أبواب الفرص</p>
+                        <div class="d-flex justify-content-center align-items-center flex-wrap sf-g-10">
+                            <a href="/academy/courses" class="tour-btu theme-btn heading-2-bg white-color">
+                                تعلم الأن <i class="fas fa-arrow-right mx-2"></i>
+                            </a>
+                            <!--<a href=""-->
+                            <!--    class="theme-btn theme-button1"> <i-->
+                            <!--        class="fas fa-arrow-right mx-2"></i></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ *@
+@*  <style>
+    .bg-secondary {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .mb-n4 {
+        margin-bottom: -1.875rem !important;
+    }
+
+    .position-relative {
+        position: relative !important;
+    }
+
+    .overflow-hidden {
+        overflow: hidden !important;
+    }
+
+    section {
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+    }
+
+    *, *::before, *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ورقة أنماط وكيل المستخدم
+    section {
+        display: block;
+        unicode-bidi: isolate;
+    }
+    .z-index-2 {
+    z-index: 2 !important;
+}
+
+.me-n6 {
+    margin-right: -4.5rem !important;
+}
+.mt-6 {
+    margin-top: 4.5rem !important;
+}
+.end-0 {
+    right: 0 !important;
+}
+.top-0 {
+    top: 0 !important;
+}
+.position-absolute {
+    position: absolute !important;
+}
+.d-none {
+    display: none !important;
+}
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ورقة أنماط وكيل المستخدم
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+    .ms-n9 {
+        margin-left: -11rem !important;
+    }
+
+    .mt-n9 {
+        margin-top: -11rem !important;
+    }
+
+    .start-50 {
+        left: 50% !important;
+    }
+
+    .top-0 {
+        top: 0 !important;
+    }
+
+    .position-absolute {
+        position: absolute !important;
+    }
+
+    *, *::before, *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ورقة أنماط وكيل المستخدم
+    div {
+        display: block;
+        unicode-bidi: isolate;
+    }
+
+
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.875rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x)* 0.5);
+        padding-left: calc(var(--bs-gutter-x)* 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+   /*  body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 100%;
+        overflow-x: hidden;
+        z-index: 0;
+        position: relative;
+        font-weight: 500;
+    } */
+    h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        line-height: 1.25;
+        color: var(--bs-heading-color);
+    }
+
+    /* .bg-secondary {
+        --bs-bg-opacity: 1 !important;
+        background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    } */
+        /* General styles */
+   /*  .mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    .g-4, .gy-4 {
+        --bs-gutter-y: 1.875rem;
+    }
+
+    .g-4, .gx-4 {
+        --bs-gutter-x: 1.875rem;
+    }
+
+    .g-4, .gy-4 {
+        --bs-gutter-y: 1.875rem;
+    }
+
+
+     .row {
+         --bs-gutter-x: 1.875rem;
+         --bs-gutter-y: 0;
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+         margin-top: 3% !important;
+
+         margin-top: calc(-1* var(--bs-gutter-y));
+         margin-right: calc(-0.5* var(--bs-gutter-x));
+         margin-left: calc(-0.5* var(--bs-gutter-x));
+     }
+
+    .bg-body {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    .card {
+        --bs-card-spacer-y: 1.25rem;
+        --bs-card-spacer-x: 1.25rem;
+        --bs-card-title-spacer-y: 0.5rem;
+        --bs-card-title-color: var(--bs-gray-900);
+        --bs-card-subtitle-color:;
+        --bs-card-border-width: 0;
+        --bs-card-border-color: var(--bs-border-color);
+        --bs-card-border-radius: 0.625rem;
+        --bs-card-box-shadow:;
+        --bs-card-inner-border-radius: 0.625rem;
+        --bs-card-cap-padding-y: 1.25rem;
+        --bs-card-cap-padding-x: 1.25rem;
+        --bs-card-cap-bg: var(--bs-body-bg);
+        --bs-card-cap-color:;
+        --bs-card-height:;
+        --bs-card-color: var(--bs-body-color);
+        --bs-card-bg: var(--bs-body-bg);
+        --bs-card-img-overlay-padding: 1.25rem;
+        --bs-card-group-margin: 0.9375rem;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        height: var(--bs-card-height);
+        color: var(--bs-body-color);
+        word-wrap: break-word;
+        background-color: var(--bs-card-bg);
+        background-clip: border-box;
+        border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+        border-radius: var(--bs-card-border-radius);
+    }
+
+    .icon-xl {
+        width: 4.5rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    .shadow-primary {
+        -webkit-box-shadow: 0 0.2rem 0.25rem rgba(var(--bs-primary-rgb), 0.2);
+        box-shadow: 0 0.2rem 0.25rem rgba(var(--bs-primary-rgb), 0.2);
+    }
+
+    .bg-secondary-grad {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(240, 150, 255, 0.15)), color-stop(51%, rgba(191, 200, 252, 0.15)), to(rgba(187, 148, 255, 0.15)));
+        background: linear-gradient(90deg, rgba(240, 150, 255, 0.15) 0%, rgba(191, 200, 252, 0.15) 51%, rgba(187, 148, 255, 0.15) 100%);
+    }
+
+    .rounded-circle {
+        border-radius: 50% !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.875rem !important;
+    }
+
+    .h-40px {
+        height: 40px !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img, svg {
+        vertical-align: middle;
+    }
+
+    *, *::before, *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ورقة أنماط وكيل المستخدم
+    img {
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+ */
+   /*  .icon-xl {
+        width: 4.5rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    *, *::before, *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        *, *::before, *::after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+ */
+
+   /*  .icon-xl {
+        width: 4.5rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        text-align: center;
+        font-size: 1.9rem;
+    } */
+
+   /*  .shadow-primary {
+        -webkit-box-shadow: 0 0.2rem 0.25rem rgba(var(--bs-primary-rgb), 0.2);
+        box-shadow: 0 0.2rem 0.25rem rgba(var(--bs-primary-rgb), 0.2);
+    }
+ */
+   /*  .bg-secondary-grad {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(240, 150, 255, 0.15)), color-stop(51%, rgba(191, 200, 252, 0.15)), to(rgba(187, 148, 255, 0.15)));
+        background: linear-gradient(90deg, rgba(240, 150, 255, 0.15) 0%, rgba(191, 200, 252, 0.15) 51%, rgba(187, 148, 255, 0.15) 100%);
+    } */
+
+  /*   .rounded-circle {
+        border-radius: 50% !important;
+    } */
+
+    /* .mb-4 {
+        margin-bottom: 1.875rem !important;
+    }
+
+    *, *::before, *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+ */
+   /*  .heading-color {
+        color: var(--bs-gray-900) !important;
+    } */
+
+   /*  .fw-semibold {
+        font-weight: 600 !important;
+    } */
+
+   /*  .mb-2 {
+        margin-bottom: 0.5rem !important;
+    }
+ */
+  /*   .lead {
+        font-size: 1.25rem;
+        font-weight: 500;
+    } */
+
+ </style>  *@
+
+@* <section class=" bg-secondary  position-relative pt-xl-8 pb-0 mb-n4 ">
+
+        <span class="position-relative overflow-hidden pt-xl-9 pb-0 bg-dark">
+            <svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7 text-dark" fill="#000" viewBox="0 0 1950 237" style="enable-background:new 0 0 1950 237;" xml:space="preserve">
+            <path class="fill-body" d="M1949.5,236.4H0v-164c717.2-131.2,1598.5-54.7,1949.5,0V236.4z"></path>
+            </svg>
+        </span>
+
+    <!-- Clay decoration -->
+    <div class="position-absolute end-0 top-0 mt-6 me-n6 z-index-2 d-none d-md-block">
+        <img src="assets/imagesx/elements/clay-decoration.png" class="h-400px" alt="Clay-decoration">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute top-0 start-50 mt-n9 ms-n9">
+        <img src="assets/imagesx/blur-decoration.svg" class="blur-8 opacity-1" alt="Grad shape">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute start-0 top-0">
+        <img src="assets/imagesx/elements//blur-decoration-2.svg" class="opacity-1 blur-8 h-300px rotate-335" alt="Grad shape">
+    </div>
+
+    <div class="container position-relative z-index-2 pt-4 pt-sm-5">
+        <!-- Title and content -->
+        <div class="inner-container-small text-center mb-5 mb-sm-7">
+            <!-- Breadcrumb -->
+            <nav class="mb-2 d-flex justify-content-center" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pricing - v2</li>
+                </ol>
+            </nav>
+
+            <!-- Title -->
+            <h1 class="mb-0">Affordable &amp; flexible pricing plans</h1>
+        </div>
+
+        <!-- Pricing box START -->
+        <div class="row g-4 g-lg-5">
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto ">
+                <div class="card card-hover-shadow card-hover-transition  bg-opacity-75 rounded-4 p-4 p-sm-5">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-secondary-grad shadow-primary rounded-circle mb-4">
+                                <img src="assets/images/elements/rocket.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Basic plan</p>
+                            <!-- Pricing text -->
+                            <p class="mb-2"> <span class="h1 mb-0">$59</span> /month</p>
+                            <p class="mb-0">Ideal for small teams, the Basic plan manages up to 10 projects.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold opacity-6 mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>5 user accounts</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>10 GB storage</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Email support</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-dark icon-link icon-link-hover justify-content-center mb-0" href="#">Purchase<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto">
+                <div class="card card-hover-shadow card-hover-transition  bg-opacity-75 rounded-4 p-4 p-sm-5">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-secondary-grad shadow-primary rounded-circle mb-4">
+                                <img src="assets/images/elements/fire.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Professional plan</p>
+                            <!-- Pricing text -->
+                            <p class="mb-2"> <span class="h1 mb-0">$99</span> /month</p>
+                            <p class="mb-0">Get priority email support and access to premium templates for a more comprehensive solution.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold opacity-6 mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Access to basic features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>15 user accounts</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>50 GB storage</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Dedicated account manager</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-dark icon-link icon-link-hover justify-content-center mb-0" href="#">Purchase<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto">
+                <div class="card card-hover-shadow card-hover-transition bg-primary-grad rounded-4 p-4 p-sm-5" data-bs-theme="dark">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-dark rounded-circle mb-4">
+                                <img src="assets/images/elements/thunder.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Enterprise plan</p>
+                            <!-- Pricing text -->
+                            <p class="h1 heading-color mb-2">Custom</p>
+                            <p class="mb-0">For businesses with unique requirements, our Custom Plan delivers a fully personalized experience.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Unlimited projects</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Custom reporting and analytics</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Dedicated account manager</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Tailored support and consulting</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Personalized onboarding and training</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-white icon-link icon-link-hover justify-content-center mb-0" href="#">Contact us<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+        </div>
+
+        <!-- Pricing box END -->
+    </div>
+
+    <!-- Skew decoration -->
+    <span class="position-absolute bottom-0 start-0">
+        <svg class="text-dark" width="1920" height="73" viewBox="0 0 1920 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0L1920 61.5V73H0V0Z" fill="currentColor"></path>
+        </svg>
+    </span>
+</section>
+
+ *@
+@* <style>
+
+
+        .plan-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+
+        }
+
+        .plan-card {
+             background: #fff;
+            color: #333;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px 30px;
+            animation: slide-in 0.5s ease-in-out;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Cairo', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+
+    .card.card-hover-transition:hover {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+
+    .card.card-hover-shadow:hover {
+        -webkit-box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+        box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+    }
+
+    .card.card-hover-transition {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card.card-hover-shadow {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+  /*   .h-40px {
+        height: 40px !important;
+    } */
+
+    .heading-color {
+        color: var(--bs-gray-900) !important;
+    }
+
+    .fw-semibold {
+        font-weight: 600 !important;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .p-0 {
+        padding: 0 !important;
+    }
+
+    .flex-column {
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+    }
+
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .d-flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        color: var(--bs-card-color);
+    }
+
+    .opacity-6 {
+        opacity: 0.6 !important;
+    }
+
+    .list-group-borderless .list-group-item {
+        border: none !important;
+        padding: 0.425rem 0;
+    }
+
+    .list-group-item:first-child {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+
+
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+        color: var(--bs-list-group-color);
+        background-color: var(--bs-list-group-bg);
+        border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+    }
+
+
+
+    .mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .bi-check-lg::before {
+        content: "\f633";
+    }
+
+    .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+        display: inline-block;
+        font-family: bootstrap-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        vertical-align: -.125em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+     [data-bs-theme=dark] {
+        /*    --bs-gray-100: #101521;
+             --bs-gray-200: #1c2130;
+        --bs-gray-300: #5f5f68;
+         --bs-gray-400: #a1a1a8;
+        --bs-gray-500: #bfc0c9;
+         --bs-gray-600: #CFD0D4;
+         --bs-gray-700: #ffffffb3;
+        --bs-gray-800: #ffffffd9;
+         --bs-gray-900: #fff;
+         --bs-body-bg: #0b0f1a;
+         --bs-body-bg-rgb: 11, 15, 26;
+         --bs-body-color: #c4c5c7;
+         --bs-heading-color: var(--bs-gray-900);
+         --bs-secondary: #1f2434; */
+         --bs-secondary-bg-rgb: 31, 36, 52;
+         --bs-border-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .bg-primary-grad {
+        background: -webkit-gradient(linear, left top, left bottom, from(#543DE7), to(#7F39F8));
+        background: linear-gradient(180deg, #543DE7 0%, #7F39F8 100%);
+    }
+
+    .text-success {
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+    }
+
+    ورقة أنماط وكيل المستخدم
+    i {
+        font-style: italic;
+    }
+</style>  *@
+@*
+  <section class=" bg-secondary  position-relative pt-xl-8 pb-0 mb-n4 ">
+
+    <span class="position-relative overflow-hidden pt-xl-9 pb-0 bg-dark">
+        <svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7 text-dark" fill="#000" viewBox="0 0 1950 237" style="enable-background:new 0 0 1950 237;" xml:space="preserve">
+        <path class="fill-body" d="M1949.5,236.4H0v-164c717.2-131.2,1598.5-54.7,1949.5,0V236.4z"></path>
+            </svg>
+    </span>
+
+    <!-- Clay decoration -->
+    <div class="position-absolute end-0 top-0 mt-6 me-n6 z-index-2 d-none d-md-block">
+        <img src="assets/imagesx/elements/clay-decoration.png" class="h-400px" alt="Clay-decoration">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute top-0 start-50 mt-n9 ms-n9">
+        <img src="assets/imagesx/blur-decoration.svg" class="blur-8 opacity-1" alt="Grad shape">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute start-0 top-0">
+        <img src="assets/imagesx/elements//blur-decoration-2.svg" class="opacity-1 blur-8 h-300px rotate-335" alt="Grad shape">
+    </div>
+
+    <div class="container position-relative z-index-2 pt-4 pt-sm-5">
+        <!-- Title and content -->
+        <div class="inner-container-small text-center mb-5 mb-sm-7">
+            <!-- Breadcrumb -->
+            <nav class="mb-2 d-flex justify-content-center" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pricing - v2</li>
+                </ol>
+            </nav>
+
+            <!-- Title -->
+            <h1 class="mb-0">Affordable &amp; flexible pricing plans</h1>
+        </div>
+
+        <!-- Pricing box START -->
+        <div class="row g-4 g-lg-5">
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto ">
+                <div class="card card-hover-shadow card-hover-transition  bg-opacity-75 rounded-4 p-4 p-sm-5">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-secondary-grad shadow-primary rounded-circle mb-4">
+                                <img src="assets/images/elements/rocket.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Basic plan</p>
+                            <!-- Pricing text -->
+                            <p class="mb-2"> <span class="h1 mb-0">$59</span> /month</p>
+                            <p class="mb-0">Ideal for small teams, the Basic plan manages up to 10 projects.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold opacity-6 mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>5 user accounts</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>10 GB storage</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Email support</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-dark icon-link icon-link-hover justify-content-center mb-0" href="#">Purchase<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto">
+                <div class="card card-hover-shadow card-hover-transition  bg-opacity-75 rounded-4 p-4 p-sm-5">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-secondary-grad shadow-primary rounded-circle mb-4">
+                                <img src="assets/images/elements/fire.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Professional plan</p>
+                            <!-- Pricing text -->
+                            <p class="mb-2"> <span class="h1 mb-0">$99</span> /month</p>
+                            <p class="mb-0">Get priority email support and access to premium templates for a more comprehensive solution.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold opacity-6 mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Access to basic features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>15 user accounts</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Customizable features</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>50 GB storage</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>Dedicated account manager</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-dark icon-link icon-link-hover justify-content-center mb-0" href="#">Purchase<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+            <!-- Pricing item START -->
+            <div class="col-xl-10 mx-auto">
+                <div class="card card-hover-shadow card-hover-transition bg-primary-grad rounded-4 p-4 p-sm-5" data-bs-theme="dark">
+                    <div class="row g-4 g-md-0">
+                        <div class="col-md-6">
+                            <!-- Icon image -->
+                            <div class="icon-xl bg-dark rounded-circle mb-4">
+                                <img src="assets/images/elements/thunder.png" class="h-40px" alt="rocket image">
+                            </div>
+                            <p class="lead heading-color fw-semibold mb-2">Enterprise plan</p>
+                            <!-- Pricing text -->
+                            <p class="h1 heading-color mb-2">Custom</p>
+                            <p class="mb-0">For businesses with unique requirements, our Custom Plan delivers a fully personalized experience.</p>
+                        </div>
+
+                        <div class="col-md-5 ms-auto">
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column h-100 p-0">
+                                <span class="fw-semibold mb-1 mb-md-3">Quick look at all the features</span>
+                                <!-- Feature list -->
+                                <ul class="list-group list-group-borderless mb-3">
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Unlimited projects</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Custom reporting and analytics</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Dedicated account manager</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Tailored support and consulting</li>
+                                    <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1">✔</i>Personalized onboarding and training</li>
+                                </ul>
+                                <!-- Button -->
+                                <a class="btn btn-white icon-link icon-link-hover justify-content-center mb-0" href="#">Contact us<i class="bi bi-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing item END -->
+        </div>
+
+        <!-- Pricing box END -->
+    </div>
+
+    <!-- Skew decoration -->
+    <span class="position-absolute bottom-0 start-0">
+        <svg class="text-dark" width="1920" height="73" viewBox="0 0 1920 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0L1920 61.5V73H0V0Z" fill="currentColor"></path>
+        </svg>
+    </span>
+</section>
+
+<style>
+    .pricing-section {
+        background-color: #6c757d;
+        position: relative;
+        padding-top: 6rem;
+        padding-bottom: 0;
+        margin-bottom: -2rem;
+    }
+
+    .icon-xl {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #6c757d, #adb5bd);
+    }
+
+    .card {
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+    .list-group {
+        list-style: none;
+        padding: 0;
+    }
+
+        .list-group li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .list-group i {
+            margin-right: 0.5rem;
+        }
+
+    .btn {
+        display: inline-block;
+        background-color: #212529;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-radius: 0.25rem;
+    }
+
+    .z-index-2 {
+        z-index: 2 !important;
+    }
+
+</style>
+ *@@* <div class="position-absolute top-0 start-0 mt-n3">
+
+    <span class="position-absolute bottom-0 start-0">
+        <svg class="fill-body" width="1920" height="254" viewBox="0 0 1920 254" fill="#000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M556.048 176.63C371.384 97.9289 108.406 143.838 0 176.63V254H1920V0C1863.62 35.5602 1712.53 98.8233 1559.27 67.394C1406.01 35.9648 1206.33 86.6647 1125.65 115.943C1012.72 168.964 740.712 255.331 556.048 176.63Z"></path>
+        </svg>
+    </span>
+</div> *@
+
+@*  <section class="bg-dark overflow-hidden position-relative" data-bs-theme="dark">
+
+
+
+    <!-- Blur decoration -->
+    <div class="position-absolute bottom-0 end-0 mb-n8">
+        <img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-9" alt="Grad shape">
+    </div>
+
+    <div class="container position-relative">
+        <div class="row g-4">
+            <!-- Key Benefits -->
+            <div class="col-lg-4">
+                <p class="heading-color">Key benefits</p>
+                <!-- List -->
+                <ul class="list-group list-group-borderless mb-4">
+                    <li class="list-group-item heading-color lead d-flex"><i class="bi bi-wallet2 text-primary me-2"></i>No hidden fees</li>
+                    <li class="list-group-item heading-color lead d-flex"><i class="bi bi-headset text-pink me-2"></i>24/7 Customer support</li>
+                    <li class="list-group-item heading-color lead d-flex"><i class="bi bi-rocket-takeoff text-warning me-2"></i>Easy upgrade &amp; downgrade</li>
+                    <li class="list-group-item heading-color lead d-flex"><i class="bi bi-clock-history text-success me-2"></i>You can cancel anytime</li>
+                </ul>
+            </div>
+
+            <!-- Skill sets and blockquote -->
+            <div class="col-lg-6 ms-auto">
+                <!-- Skill sets -->
+                <div class="row g-4 g-lg-6 mb-5">
+                    <div class="col-sm-6">
+                        <h3 class="border-start border-primary border-2 ps-4 mb-3">2,000+</h3>
+                        <p class="mb-0">Customers have used our awesome templates since 2019</p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <h3 class="border-start border-primary border-2 ps-4 mb-3">85+</h3>
+                        <p class="mb-0">Client's projects complete all over the world</p>
+                    </div>
+                </div>
+
+                <!-- Blockquote -->
+                <blockquote class="d-flex">
+                    <!-- Avatar -->
+                    <div class="avatar avatar-xl flex-shrink-0">
+                        <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+                    </div>
+                    <div class="ms-4">
+                        <!-- Content -->
+                        <p class="fs-6 fw-normal heading-color mb-4">"We believe that it takes great people to deliver a great product"</p>
+                        <div class="blockquote-footer mb-0">
+                            By Albert Schweitzer
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+
+        </div>
+    </div>
+</section>
+ *@
+@* 
+<Texstposition Paramss="@Paramss" />
+
+
+@code {
+    [Parameter] public CardIconServicsm? Paramss { set; get; } = new CardIconServicsm();
+
+
+
+
+} *@
+
+@*  <style>
+        .from-gray-50-to-white, .from-gray-50-to-white:hover {
+            --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+            --tw-gradient-to: #fff var(--tw-gradient-to-position);
+        }
+
+        .pt-6 {
+            padding-top: 1.5rem;
+        }
+
+        .bg-gradient-to-l {
+            background-image: linear-gradient(to left, var(--tw-gradient-stops));
+        }
+
+        .border-gray-100 {
+            --tw-border-opacity: 1;
+            border-color: rgb(243 244 246 / var(--tw-border-opacity));
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .rounded-xl {
+            border-radius: .75rem;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        }
+
+        .pb-4 {
+            padding-bottom: 1rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .mb-2 {
+            margin-bottom: .5rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+
+
+        .flex-none {
+            flex: none;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .bg-gray-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .flex-none {
+            flex: none;
+        }
+
+        .size-12 {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .mr-3 {
+            margin-right: .75rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        img, svg, video, canvas, audio, iframe, embed, object {
+            display: block;
+            vertical-align: middle;
+        }
+
+        .my-1 {
+            margin-top: .25rem;
+            margin-bottom: .25rem;
+        }
+        }
+
+    .font-bold {
+        font-weight: 700;
+    }
+    .text-lg\/5 {
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+    }
+    .items-center {
+        align-items: center;
+    }
+    .flex {
+        display: flex
+    ;
+    }
+    blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin: 0;
+    }
+
+        .text-xs {
+            font-size: .75rem;
+            line-height: 1rem;
+        }
+
+        .font-mono {
+            font-family: IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+        }
+
+        .px-1 {
+            padding-left: .25rem;
+            padding-right: .25rem;
+        }
+
+        .bg-gray-200 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+        }
+
+        .rounded {
+            border-radius: .25rem;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .text-gray-600 {
+            --tw-text-opacity: 1;
+            color: rgb(75 85 99 / var(--tw-text-opacity));
+        }
+
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        .border-gray-100 {
+            --tw-border-opacity: 1;
+            border-color: rgb(243 244 246 / var(--tw-border-opacity));
+        }
+
+        .border-t {
+            border-top-width: 1px;
+        }
+
+        ol, ul, menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .py-1\.5 {
+            padding-top: .375rem;
+            padding-bottom: .375rem;
+        }
+
+        .px-2 {
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .py-0\.5 {
+            padding-top: .125rem;
+            padding-bottom: .125rem;
+        }
+
+        .px-2 {
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+
+        .rounded {
+            border-radius: .25rem;
+        }
+
+        .block {
+            display: block;
+        }
+</style>
+  *@
+@*  <style>
+     /* التصميم الأساسي للعنصر الرئيسي */
+section {
+  padding-top: 1.5rem; /* مسافة علوية */
+  border: 1px solid #e5e7eb; /* لون الحد */
+  border-radius: 1rem; /* الزوايا الدائرية */
+  overflow: hidden; /* إخفاء الأجزاء الزائدة */
+  background: linear-gradient(to left, #f9fafb, #ffffff); /* تدرج خلفي */
+}
+
+/* تصميم الرابط */
+a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* مسافة سفلية */
+  padding: 0 1rem 1rem; /* مسافات داخلية */
+  text-decoration: none; /* إزالة الخط السفلي */
+  color: inherit; /* استخدام لون النص الافتراضي */
+}
+
+/* تصميم صورة الملف الشخصي */
+a img {
+  border-radius: 50%; /* صورة دائرية */
+  margin-right: 0.75rem; /* مسافة على اليمين */
+  width: 3rem; /* عرض الصورة */
+  height: 3rem; /* ارتفاع الصورة */
+  background-color: #f3f4f6; /* خلفية رمادية فاتحة */
+}
+
+/* تصميم العناوين */
+h1 {
+  font-size: 1.25rem; /* حجم النص */
+  font-weight: bold; /* خط عريض */
+  display: flex;
+  align-items: center;
+}
+
+h1.lg\:text-xl {
+  font-size: 1.5rem; /* تكبير النص في الشاشات الكبيرة */
+}
+
+/* تصميم الشارات */
+div.inline-block {
+  display: inline-block;
+  background-color: #e5e7eb; /* خلفية رمادية */
+  padding: 0.25rem 0.5rem; /* مسافة داخلية */
+  font-family: monospace; /* خط أحادي */
+  font-size: 0.75rem; /* حجم صغير */
+  border-radius: 0.25rem; /* زوايا دائرية */
+}
+
+/* تصميم القائمة */
+nav ul {
+  border-top: 1px solid #e5e7eb; /* حد علوي */
+  color: #4b5563; /* لون النص */
+  font-size: 1rem; /* حجم النص الأساسي */
+}
+
+nav ul li {
+  list-style: none; /* إزالة الترقيم */
+}
+
+nav ul a {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.5rem; /* مسافة داخلية */
+  color: #4b5563; /* لون النص */
+  text-decoration: none; /* إزالة الخط السفلي */
+  border-radius: 0.25rem; /* زوايا دائرية */
+  transition: background-color 0.3s ease; /* انتقال سلس */
+}
+
+nav ul a:hover {
+  background-color: #f3f4f6; /* تغيير الخلفية عند التمرير */
+}
+
+nav ul a.dark\:text-gray-400 {
+  color: #9ca3af; /* لون أغمق للوضع الليلي */
+}
+
+nav ul a.dark\:group-hover\:bg-gray-800:hover {
+  background-color: #1f2937; /* خلفية داكنة للوضع الليلي */
+}
+
+/* تصميم شارات جديدة */
+nav ul span {
+  margin-left: auto;
+  margin-right: 0.375rem; /* مسافة على اليمين */
+  padding: 0.25rem 0.375rem; /* مسافة داخلية */
+  font-size: 0.75rem; /* حجم النص */
+  font-weight: 600; /* خط متوسط */
+  border-radius: 0.375rem; /* زوايا دائرية */
+  background-color: rgba(59, 130, 246, 0.1); /* خلفية زرقاء شاحبة */
+  color: #3b82f6; /* نص أزرق */
+}
+
+/* تصميم مستجيب */
+
+
+ </style> *@
+@* 
+<main class="flex flex-1 flex-col">
+<div class="container-1 relative flex flex-col md:grid md:space-y-0 w-full md:grid-cols-12 space-y-4 md:gap-6 py-6">
+    <div class="md:col-span-4 lg:col-span-3">
+        <section class="pt-6 border-gray-100 from-gray-50-to-white overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-l">
+            <a class="cols-span-9 mb-2 flex items-center px-4 pb-4" href="/735408478mm">
+                <div class="relative flex-none">
+                    <img alt="" class="rounded-full mr-3 size-12 flex-none overflow-hidden bg-gray-100 dark:bg-gray-900" src="https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/SXJTVYmE71adfaZsiGDsE.png">
+                </div>
+                <div class="my-1">
+                    <h1 class="flex items-center text-lg/5 font-bold lg:text-xl/6">عبدالرحمن</h1>
+                    <div class="inline-block rounded bg-gray-200 px-1 font-mono text-xs dark:bg-gray-800">735408478mm</div>
+                </div>
+            </a>
+            <nav>
+                <ul class="divide-y divide-gray-100 border-t border-gray-100 text-base text-gray-600">
+                    <li>
+                        <a href="/settings/profile" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Profile</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/account" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Account</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/authentication" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Authentication</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/organizations" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Organizations</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/billing" class="group relative flex items-center overflow-hidden px-2 py-1.5 bg-gradient-to-r from-gray-100 font-semibold text-gray-900 dark:from-gray-800 dark:to-transparent dark:text-gray-200 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Billing</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/tokens" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Access Tokens</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/keys" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">SSH and GPG Keys</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/webhooks" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Webhooks</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/papers" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Papers</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/notifications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Notifications</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/local-apps" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Local Apps and Hardware</div>
+                            <span class="ml-auto mr-1.5 rounded px-1.5 py-0.5 text-xs font-semibold leading-tight bg-blue-500/10 text-blue-700 dark:text-blue-200">NEW</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/gated-repos" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Gated Repositories</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/content-preferences" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Content Preferences</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/connected-applications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Connected Apps</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/settings/theme" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                            <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Theme</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        <div slot="footer" class="mt-3 flex items-center gap-2 text-sm text-gray-400 lg:px-4">
+            Upgrade to
+            <a class="flex items-center border-b hover:border-gray-600 hover:text-gray-600 dark:border-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200" href="/settings/billing/subscription#subscribe">
+                <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.198 1.961a3.164 3.164 0 0 1 1.711-.616h5.455c1.163 0 1.818.946 1.454 2.073l-1.672 5.164c-.364 1.127-1.637 2.072-2.837 2.072H1.855C.69 10.654 0 9.71.364 8.582l1.745-5.164A3.164 3.164 0 0 1 3.2 1.96Zm1.807 1.705L3.387 8.364h1.315l.513-1.49h.535c.346 0 .69-.057 1.03-.173.346-.115.652-.293.918-.534a2.2 2.2 0 0 0 .606-.94c.136-.395.15-.706.039-.932-.106-.227-.295-.388-.567-.484a2.853 2.853 0 0 0-.952-.145h-1.82Zm1.022 2.226h-.474l.428-1.243h.443c.255 0 .436.043.544.13.108.087.125.236.052.448a.977.977 0 0 1-.36.492c-.162.115-.373.173-.612.173Z" fill="currentColor"></path>
+                </svg>
+                Pro Plan
+            </a>
+        </div>
+    </div>
+    <div class="md:col-span-8 lg:col-span-9">
+        <section class="pt-6">
+            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Settings</h2>
+            <!-- Settings content here -->
+              <div class="border-b border-gray-100 via-white to-white dark:via-gray-950 dark:to-gray-950 md:bg-gradient-to-r">
+                <div class="-mb-px flex h-12 items-center overflow-x-auto overflow-y-hidden ">
+                    <a class="tab-alternate active" href="/settings/billing">
+                        Overview
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/payment">
+                        Payment information
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/subscription">
+                        PRO Subscription
+
+
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="SVELTE_HYDRATER contents" data-target="BillingOverview" data-props="{&quot;last3periods&quot;:[],&quot;proSubscription&quot;:null,&quot;proSubscriptionEvents&quot;:[],&quot;emailUnconfirmed&quot;:true,&quot;orgs&quot;:[],&quot;invoiceCreditsCents&quot;:0,&quot;apiUrlPrefix&quot;:&quot;/api/users/billing&quot;,&quot;namespace&quot;:&quot;735408478mm&quot;,&quot;usage&quot;:{&quot;storage&quot;:{&quot;used&quot;:0,&quot;usedPrivate&quot;:0,&quot;usedPublic&quot;:0,&quot;count&quot;:0,&quot;limit&quot;:100000000000},&quot;inferenceApi&quot;:{&quot;used&quot;:0,&quot;limit&quot;:1000,&quot;duration&quot;:86400,&quot;renewal&quot;:86400,&quot;lastUpdated&quot;:&quot;2024-12-13T19:11:04.931Z&quot;},&quot;zeroGpu&quot;:{&quot;base&quot;:300,&quot;current&quot;:300,&quot;lastUpdated&quot;:&quot;2024-12-13T19:11:04.931Z&quot;}},&quot;isPro&quot;:false}">
+                <div class="mt-6 flex flex-col gap-y-6">
+                    <div class="shadow-alternate-sm mt-4 flex w-full flex-col gap-4 self-start rounded-xl border border-gray-100 px-4 pt-4">
+                        <div class="flex items-baseline justify-between">
+                            <p class="font-semibold">Usage Quota</p> <span class="ml-auto text-xs leading-none text-gray-400 sm:text-sm">
+                                <a href="/subscribe/pro" class="underline hover:text-gray-500 dark:hover:text-gray-300">Subscribe to PRO</a> to
+                                get higher limits
+                            </span>
+                        </div> <div class="grid lg:grid-cols-2 grid-rows-2 gap-5 sm:gap-x-8 sm:gap-y-7">
+                            <div class="lg:col-span-2">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1.5 whitespace-nowrap leading-none text-gray-700 sm:gap-2.5">
+                                        Private Repositories Storage
+                                        <a href="/docs/hub/storage-limits" target="_blank" class="rounded-full bg-gray-100 px-1.5 text-xs text-gray-600 hover:bg-gray-200/70 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700/60 dark:hover:text-gray-200 sm:px-2 sm:py-0.5">View doc</a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0 Bytes/100 GB <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="relative flex h-[8px] items-center rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="rounded-x-full group h-[8px] transition-all duration-100 ease-in"><div class="absolute z-10 transform rounded border bg-black p-2 font-normal leading-tight text-white shadow transition-opacity dark:bg-gray-800 top-full translate-y-2 border-b-0 left-1/2 -translate-x-1/2 text-xs w-44 hidden group-hover:block"><div class="absolute h-0 w-0 transform border-4 border-black border-x-transparent dark:border-y-gray-800 bottom-full border-t-0 left-1/2 -translate-x-1/2"></div> Used storage: 0 Bytes</div></div></div>
+                            </div> <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Zero GPU
+                                        <a href="/spaces/enzostvs/zero-gpu-spaces" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/5 <span class="sm:hidden">min</span> <span class="max-sm:hidden">minutes</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Inference API
+                                        <a href="/playground" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/1,000 <span class="sm:hidden">req</span> <span class="max-sm:hidden">requests</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> <div class="from-gray-50-to-white -mx-4 flex flex-col gap-2 overflow-hidden rounded-b-xl border-t border-gray-100 bg-gradient-to-r p-4 lg:col-span-2"><dl class="flex items-baseline gap-1.5 whitespace-nowrap text-sm leading-none text-gray-700 sm:gap-2.5"><div class="flex items-center gap-1.5"><dt>Public Repositories Storage</dt> <div class="flex h-3.5 w-5 items-center justify-center rounded bg-gray-200/70 text-xs leading-none text-gray-400 dark:bg-gray-800">∞</div> </div><div class="flex-1 border-t border-dotted"></div><dd class="text-gray-400">0 Bytes</dd></dl></div>
+                        </div>
+                    </div>
+                    <div class="overview-card-wrapper px-3 py-2">Confirm your email address to use our paid services</div>
+                </div>
+                </div>
+        </section>
+    </div>
+</div>
+</main>
+style="margin-right: 83%;margin-left: -6%;"
+style="margin-left: 22%;  margin-top: -60%;"
+
+<div class="container relative flex flex-col md:grid md:space-y-0 w-full md:grid-cols-12  space-y-4 md:gap-6 py-6">
+        <div class="md:col-span-4 lg:col-span-3">
+        <section class="pt-6 border-gray-100 from-gray-50-to-white overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-l" >
+                <a class="cols-span-9 mb-2 flex items-center px-4 pb-4" href="/735408478mm">
+                    <div class="relative flex-none">
+                        <img alt="" class="rounded-full mr-3 size-12 flex-none overflow-hidden bg-gray-100 dark:bg-gray-900" src="https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/SXJTVYmE71adfaZsiGDsE.png">
+                    </div>
+                    <div class="my-1">
+                        <h1 class="flex items-center text-lg/5 font-bold lg:text-xl/6">عبدالرحمن</h1>
+                        <div class="inline-block rounded bg-gray-200 px-1 font-mono text-xs dark:bg-gray-800">735408478mm</div>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="divide-y divide-gray-100 border-t border-gray-100 text-base text-gray-600">
+                        <li>
+                            <a href="/settings/profile" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Profile</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/account" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Account</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/authentication" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Authentication</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/organizations" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Organizations</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/billing" class="group relative flex items-center overflow-hidden px-2 py-1.5 bg-gradient-to-r from-gray-100 font-semibold text-gray-900 dark:from-gray-800 dark:to-transparent dark:text-gray-200 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Billing</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/tokens" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Access Tokens</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/keys" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">SSH and GPG Keys</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/webhooks" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Webhooks</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/papers" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Papers</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/notifications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Notifications</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/local-apps" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Local Apps and Hardware</div>
+
+
+                                <span class="ml-auto mr-1.5 rounded px-1.5 py-0.5 text-xs font-semibold leading-tight bg-blue-500/10 text-blue-700 dark:text-blue-200">NEW</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/gated-repos" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Gated Repositories</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/content-preferences" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Content Preferences</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/connected-applications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Connected Apps</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/theme" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Theme</div>
+
+
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section> 
+ 
+ <UserSettings />
+            <div slot="footer" class="mt-3 flex items-center gap-2 text-sm text-gray-400 lg:px-4">
+                Upgrade to
+                <a class="flex items-center border-b hover:border-gray-600 hover:text-gray-600 dark:border-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200" href="/settings/billing/subscription#subscribe">
+                    <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.198 1.961a3.164 3.164 0 0 1 1.711-.616h5.455c1.163 0 1.818.946 1.454 2.073l-1.672 5.164c-.364 1.127-1.637 2.072-2.837 2.072H1.855C.69 10.654 0 9.71.364 8.582l1.745-5.164A3.164 3.164 0 0 1 3.2 1.96Zm1.807 1.705L3.387 8.364h1.315l.513-1.49h.535c.346 0 .69-.057 1.03-.173.346-.115.652-.293.918-.534a2.2 2.2 0 0 0 .606-.94c.136-.395.15-.706.039-.932-.106-.227-.295-.388-.567-.484a2.853 2.853 0 0 0-.952-.145h-1.82Zm1.022 2.226h-.474l.428-1.243h.443c.255 0 .436.043.544.13.108.087.125.236.052.448a.977.977 0 0 1-.36.492c-.162.115-.373.173-.612.173Z" fill="currentColor"></path></svg> Pro
+                </a>
+            </div>
+        </div>
+
+    <section class="pt-6 border-gray-100 md:col-span-8 lg:col-span-9 xl:col-span-9 md:px-4 py-4" >
+            <div class="mb-6">
+                <div class="flex justify-between">
+                    <h1 class="flex flex-row items-center text-xl font-bold">
+                        Billing
+                    </h1>
+                </div>
+            </div>
+            <div class="border-b border-gray-100 via-white to-white dark:via-gray-950 dark:to-gray-950 md:bg-gradient-to-r">
+                <div class="-mb-px flex h-12 items-center overflow-x-auto overflow-y-hidden ">
+                    <a class="tab-alternate active" href="/settings/billing">
+                        Overview
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/payment">
+                        Payment information
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/subscription">
+                        PRO Subscription
+
+
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="SVELTE_HYDRATER contents" data-target="BillingOverview" data-props="{&quot;last3periods&quot;:[],&quot;proSubscription&quot;:null,&quot;proSubscriptionEvents&quot;:[],&quot;emailUnconfirmed&quot;:true,&quot;orgs&quot;:[],&quot;invoiceCreditsCents&quot;:0,&quot;apiUrlPrefix&quot;:&quot;/api/users/billing&quot;,&quot;namespace&quot;:&quot;735408478mm&quot;,&quot;usage&quot;:{&quot;storage&quot;:{&quot;used&quot;:0,&quot;usedPrivate&quot;:0,&quot;usedPublic&quot;:0,&quot;count&quot;:0,&quot;limit&quot;:100000000000},&quot;inferenceApi&quot;:{&quot;used&quot;:0,&quot;limit&quot;:1000,&quot;duration&quot;:86400,&quot;renewal&quot;:86400,&quot;lastUpdated&quot;:&quot;2024-12-13T23:12:38.727Z&quot;},&quot;zeroGpu&quot;:{&quot;base&quot;:300,&quot;current&quot;:300,&quot;lastUpdated&quot;:&quot;2024-12-13T23:12:38.727Z&quot;}},&quot;isPro&quot;:false}">
+                <div class="mt-6 flex flex-col gap-y-6">
+                    <div class="shadow-alternate-sm mt-4 flex w-full flex-col gap-4 self-start rounded-xl border border-gray-100 px-4 pt-4">
+                        <div class="flex items-baseline justify-between">
+                            <p class="font-semibold">Usage Quota</p> <span class="ml-auto text-xs leading-none text-gray-400 sm:text-sm">
+                                <a href="/subscribe/pro" class="underline hover:text-gray-500 dark:hover:text-gray-300">Subscribe to PRO</a> to
+                                get higher limits
+                            </span>
+                        </div>
+                        <div class="grid lg:grid-cols-2 grid-rows-2 gap-5 sm:gap-x-8 sm:gap-y-7">
+                            <div class="lg:col-span-2">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1.5 whitespace-nowrap leading-none text-gray-700 sm:gap-2.5">
+                                        Private Repositories Storage
+                                        <a href="/docs/hub/storage-limits" target="_blank" class="rounded-full bg-gray-100 px-1.5 text-xs text-gray-600 hover:bg-gray-200/70 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700/60 dark:hover:text-gray-200 sm:px-2 sm:py-0.5">View doc</a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0 Bytes/100 GB <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div>
+                                <div class="relative flex h-[8px] items-center rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="rounded-x-full group h-[8px] transition-all duration-100 ease-in"><div class="absolute z-10 transform rounded border bg-black p-2 font-normal leading-tight text-white shadow transition-opacity dark:bg-gray-800 top-full translate-y-2 border-b-0 left-1/2 -translate-x-1/2 text-xs w-44 hidden group-hover:block"><div class="absolute h-0 w-0 transform border-4 border-black border-x-transparent dark:border-y-gray-800 bottom-full border-t-0 left-1/2 -translate-x-1/2"></div> Used storage: 0 Bytes</div></div></div>
+                            </div> 
+                            
+                            <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Zero GPU
+                                        <a href="/spaces/enzostvs/zero-gpu-spaces" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/5 <span class="sm:hidden">min</span> <span class="max-sm:hidden">minutes</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Inference API
+                                        <a href="/playground" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/1,000 <span class="sm:hidden">req</span> <span class="max-sm:hidden">requests</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> 
+                            <div class="from-gray-50-to-white -mx-4 flex flex-col gap-2 overflow-hidden rounded-b-xl border-t border-gray-100 bg-gradient-to-r p-4 lg:col-span-2">
+<dl class="flex items-baseline gap-1.5 whitespace-nowrap text-sm leading-none text-gray-700 sm:gap-2.5"><div class="flex items-center gap-1.5">
+    <dt>Public Repositories Storage</dt>
+    <div class="flex h-3.5 w-5 items-center justify-center rounded bg-gray-200/70 text-xs leading-none text-gray-400 dark:bg-gray-800">∞</div> </div><div class="flex-1 border-t border-dotted"></div><dd class="text-gray-400">0 Bytes</dd></dl></div>
+                        </div>
+                    </div> <div class="overview-card-wrapper px-3 py-2">Confirm your email address to use our paid services</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+@* <style>
+    .from-gray-50-to-white, .from-gray-50-to-white:hover {
+        --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        --tw-gradient-to: #fff var(--tw-gradient-to-position);
+    }
+
+    .pt-6 {
+        padding-top: 1.5rem;
+    }
+
+    .bg-gradient-to-l {
+        background-image: linear-gradient(to left, var(--tw-gradient-stops));
+    }
+
+    .border-gray-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    }
+
+    .border {
+        border-width: 1px;
+    }
+
+    .rounded-xl {
+        border-radius: .75rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    }
+
+    .pb-4 {
+        padding-bottom: 1rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .mb-2 {
+        margin-bottom: .5rem;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    
+
+    .flex-none {
+        flex: none;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .bg-gray-100 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .flex-none {
+        flex: none;
+    }
+
+    .size-12 {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .mr-3 {
+        margin-right: .75rem;
+    }
+
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img, svg, video, canvas, audio, iframe, embed, object {
+        display: block;
+        vertical-align: middle;
+    }
+
+    .my-1 {
+        margin-top: .25rem;
+        margin-bottom: .25rem;
+    }
+    }
+
+.font-bold {
+    font-weight: 700;
+}
+.text-lg\/5 {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex
+;
+}
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .font-mono {
+        font-family: IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    }
+
+    .px-1 {
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+
+    .bg-gray-200 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .text-gray-600 {
+        --tw-text-opacity: 1;
+        color: rgb(75 85 99 / var(--tw-text-opacity));
+    }
+
+    .text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .border-gray-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    }
+
+    .border-t {
+        border-top-width: 1px;
+    }
+
+    ol, ul, menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .py-1\.5 {
+        padding-top: .375rem;
+        padding-bottom: .375rem;
+    }
+
+    .px-2 {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .py-0\.5 {
+        padding-top: .125rem;
+        padding-bottom: .125rem;
+    }
+
+    .px-2 {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .block {
+        display: block;
+    }
+</style> 
+<style>
+ 
+
+.space-y-4>:not([hidden])~:not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem* calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem* var(--tw-space-y-reverse));
+}
+
+.pt-6 {
+    padding-top: 1.5rem;
+}
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.border-gray-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+
+    .mb-6 {
+        margin-bottom: 1.5rem;
+    }
+
+ 
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+
+    
+
+    .overflow-y-hidden {
+        overflow-y: hidden;
+    }
+
+    .overflow-x-auto {
+        overflow-x: auto;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .h-12 {
+        height: 3rem;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .-mb-\[1px\], .-mb-px {
+        margin-bottom: -1px;
+    }
+
+    .to-white {
+    --tw-gradient-to: #fff var(--tw-gradient-to-position);
+}
+.via-white {
+    --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.border-gray-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.tab-alternate.active {
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity));
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.tab-alternate {
+    display: flex
+;
+    height: 100%;
+    align-items: center;
+    white-space: nowrap;
+    border-bottom-width: 2px;
+    border-color: transparent;
+    padding-left: .625rem;
+    padding-right: .625rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.tab-alternate {
+    display: flex
+;
+    height: 100%;
+    align-items: center;
+    white-space: nowrap;
+    border-bottom-width: 2px;
+    border-color: transparent;
+    padding-left: .625rem;
+    padding-right: .625rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+    .contents {
+        display: contents;
+    }
+
+   
+
+    .gap-y-6 {
+        row-gap: 1.5rem;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .mt-6 {
+        margin-top: 1.5rem;
+    }
+
+   
+
+    .shadow-alternate-sm {
+        box-shadow: 0 5px 5px #00000008, 0 2px 2px #00000008, 0 0 1px #00000008;
+    }
+
+    .pt-4 {
+        padding-top: 1rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .border-gray-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    }
+
+    .border {
+        border-width: 1px;
+    }
+
+    .rounded-xl {
+        border-radius: .75rem;
+    }
+
+    .self-start {
+        align-self: flex-start;
+    }
+
+    .gap-4 {
+        gap: 1rem;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .mt-4 {
+        margin-top: 1rem;
+    }
+
+ 
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .items-baseline {
+        align-items: baseline;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    
+
+    .font-semibold {
+        font-weight: 600;
+    }
+    
+
+
+.text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+.leading-none {
+    line-height: 1;
+}
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+.ml-auto {
+    margin-left: auto;
+}
+
+  
+
+    .underline {
+        -webkit-text-decoration-line: underline;
+        text-decoration-line: underline;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+   
+.gap-5 {
+    gap: 1.25rem;
+}
+.grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.grid {
+    display: grid
+;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+.flex {
+    display: flex
+;
+}
+.mb-2\.5 {
+    margin-bottom: .625rem;
+}
+
+
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.leading-none {
+    line-height: 1;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.gap-1\.5 {
+    gap: .375rem;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex
+;
+}
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+.px-1\.5 {
+    padding-left: .375rem;
+    padding-right: .375rem;
+}
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.rounded-full {
+    border-radius: 9999px;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+    ment.style {
+    }
+
+    .text-gray-400 {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .ml-auto {
+        margin-left: auto;
+    }
+
+   
+
+    .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .translate-y-0\.5 {
+        --tw-translate-y: .125rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .ml-0\.5 {
+        margin-left: .125rem;
+    }
+
+    img, svg, video, canvas, audio, iframe, embed, object {
+        display: block;
+        vertical-align: middle;
+    }
+
+    element.style {
+    }
+
+    .ring-gray-200\/40 {
+        --tw-ring-color: rgb(229 231 235 / .4);
+    }
+
+    .ring-1 {
+        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    }
+
+    .bg-gray-200\/80 {
+        background-color: #e5e7ebcc;
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .h-\[8px\] {
+        height: 8px;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+
+    .ease-in {
+        transition-timing-function: cubic-bezier(.4,0,1,1);
+    }
+
+    .duration-100 {
+        transition-duration: .1s;
+    }
+
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+    }
+
+    .h-\[8px\] {
+        height: 8px;
+    }
+
+    element.style {
+    }
+
+    .transition-opacity {
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+    }
+
+    .shadow {
+        --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+        --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+    }
+
+    .leading-tight {
+        line-height: 1.25;
+    }
+
+    .font-normal {
+        font-weight: 400;
+    }
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .p-2 {
+        padding: .5rem;
+    }
+
+    .bg-black {
+        --tw-bg-opacity: 1;
+        background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+    }
+
+    .border-b-0 {
+        border-bottom-width: 0px;
+    }
+
+    .border {
+        border-width: 1px;
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .translate-y-2 {
+        --tw-translate-y: .5rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .-translate-x-1\/2 {
+        --tw-translate-x: -50%;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .w-44 {
+        width: 11rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .z-10 {
+        z-index: 10;
+    }
+
+    .top-full {
+        top: 100%;
+    }
+
+    .left-1\/2 {
+        left: 50%;
+    }
+
+    .absolute {
+        position: absolute;
+    }
+
+    element.style {
+    }
+
+    .border-x-transparent {
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+
+    .border-black {
+        --tw-border-opacity: 1;
+        border-color: rgb(0 0 0 / var(--tw-border-opacity));
+    }
+
+    .border-t-0 {
+        border-top-width: 0px;
+    }
+
+    .border-4 {
+        border-width: 4px;
+    }
+
+    .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .-translate-x-1\/2 {
+        --tw-translate-x: -50%;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .w-0 {
+        width: 0px;
+    }
+
+    .h-0 {
+        height: 0px;
+    }
+
+    .left-1\/2 {
+        left: 50%;
+    }
+
+    .bottom-full {
+        bottom: 100%;
+    }
+
+    .absolute {
+        position: absolute;
+    }
+
+    element.style {
+    }
+
+    .col-span-1 {
+        grid-column: span 1 / span 1;
+    }
+    
+
+.items-baseline {
+    align-items: baseline;
+}
+.flex {
+    display: flex
+;
+}
+.mb-2\.5 {
+    margin-bottom: .625rem;
+}
+
+element.style {
+}
+
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.leading-none {
+    line-height: 1;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.gap-1 {
+    gap: .25rem;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex
+;
+}
+
+    element.style {
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    
+element.style {
+}
+
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+.translate-y-px {
+    --tw-translate-y: 1px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+}
+
+    element.style {
+    }
+
+    .text-gray-400 {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .ml-auto {
+        margin-left: auto;
+    }
+
+
+    .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .translate-y-0\.5 {
+        --tw-translate-y: .125rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    element.style {
+    }
+
+    .ring-gray-200\/40 {
+        --tw-ring-color: rgb(229 231 235 / .4);
+    }
+
+    .ring-1 {
+        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    }
+
+    .bg-gray-200\/80 {
+        background-color: #e5e7ebcc;
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .h-\[6px\] {
+        height: 6px;
+    }
+
+
+
+    .ease-in {
+        transition-timing-function: cubic-bezier(.4,0,1,1);
+    }
+
+    .duration-100 {
+        transition-duration: .1s;
+    }
+
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+    }
+
+    .to-gray-600 {
+        --tw-gradient-to: #4b5563 var(--tw-gradient-to-position);
+    }
+
+    .from-black {
+        --tw-gradient-from: #000 var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    .bg-gradient-to-t {
+        background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    }
+
+    .w-0 {
+        width: 0px;
+    }
+
+    .h-\[6px\] {
+        height: 6px;
+    }
+    
+
+.from-gray-50-to-white, .from-gray-50-to-white:hover {
+    --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #fff var(--tw-gradient-to-position);
+}
+.p-4 {
+    padding: 1rem;
+}
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.border-gray-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+.border-t {
+    border-top-width: 1px;
+}
+.rounded-b-xl {
+    border-bottom-right-radius: .75rem;
+    border-bottom-left-radius: .75rem;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.gap-2 {
+    gap: .5rem;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex {
+    display: flex
+;
+}
+.-mx-4 {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.leading-none {
+    line-height: 1;
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.gap-1\.5 {
+    gap: .375rem;
+}
+.items-baseline {
+    align-items: baseline;
+}
+.flex {
+    display: flex
+;
+}
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+
+    .gap-1\.5 {
+        gap: .375rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    element.style {
+    }
+
+    .text-gray-400 {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+
+    .leading-none {
+        line-height: 1;
+    }
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .bg-gray-200\/70 {
+        background-color: #e5e7ebb3;
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .justify-center {
+        justify-content: center;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .w-5 {
+        width: 1.25rem;
+    }
+
+    .h-3\.5 {
+        height: .875rem;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    
+
+    .border-dotted {
+        border-style: dotted;
+    }
+
+    .border-t {
+        border-top-width: 1px;
+    }
+
+    .flex-1 {
+        flex: 1 1 0%;
+    }
+
+
+    .text-gray-400 {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+
+    blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin: 0;
+    }
+
+    
+
+    .py-2 {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    .px-3 {
+        padding-left: .75rem;
+        padding-right: .75rem;
+    } 
+/* 
+    .overview-card-wrapper {
+        border-radius: .5rem;
+        border-width: 1px;
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+        background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        --tw-gradient-to: #fff var(--tw-gradient-to-position);
+    }
+ */
+.py-6 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+.flex-col {
+        flex-direction: column !important;
+    }
+/* .w-full {
+    width: 100%;
+}
+.flex {
+    display: flex !important;
+}
+.relative {
+        position: relative !important;
+    } */
+/* 
+.container-1 {
+    width: 100%;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }  */
+    </style>
+    *@
+@* <style>
+    /* Styling the section container */
+    .pt-6 {
+        padding-top: 1.5rem;
+    }
+
+    .border-gray-100 {
+        border-color: #f3f4f6;
+    }
+
+    .bg-gradient-to-l {
+        background: linear-gradient(to left, #f9fafb, #ffffff);
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .rounded-xl {
+        border-radius: 1rem;
+    }
+
+    .border {
+        border-width: 1px;
+    }
+
+    /* Styling the user profile link */
+    .cols-span-9 {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pb-4 {
+        padding-bottom: 1rem;
+    }
+
+    /* Profile picture */
+    img.rounded-full {
+        border-radius: 9999px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .size-12 {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .bg-gray-100 {
+        background-color: #f3f4f6;
+    }
+
+    .dark\:bg-gray-900 {
+        background-color: #1f2937;
+    }
+
+    /* Styling the text */
+    .text-lg\/5 {
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .lg\:text-xl\/6 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    .text-xs {
+        font-size: 0.75rem;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .bg-gray-200 {
+        background-color: #e5e7eb;
+    }
+
+    .dark\:bg-gray-800 {
+        background-color: #374151;
+    }
+
+    /* Navigation list */
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .divide-y {
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .divide-gray-100 {
+        border-color: #f3f4f6;
+    }
+
+    .text-base {
+        font-size: 1rem;
+    }
+
+    .text-gray-600 {
+        color: #4b5563;
+    }
+
+    .dark\:text-gray-400 {
+        color: #9ca3af;
+    }
+
+    /* Navigation links */
+    nav ul li a {
+        display: flex;
+        align-items: center;
+        padding: 0.375rem 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        nav ul li a:hover {
+            background-color: #f9fafb;
+        }
+
+    .dark\:group-hover\:bg-gray-800:hover {
+        background-color: #1f2937;
+    }
+
+    /* Billing highlight */
+    .bg-gradient-to-r {
+        background: linear-gradient(to right, #f3f4f6, transparent);
+    }
+
+    .font-semibold {
+        font-weight: 600;
+    }
+
+    .text-gray-900 {
+        color: #111827;
+    }
+
+    .dark\:text-gray-200 {
+        color: #e5e7eb;
+    }
+
+    /* New badge */
+    .ml-auto {
+        margin-left: auto;
+    }
+
+    .mr-1.5 {
+        margin-right: 0.375rem;
+    }
+
+    .bg-blue-500\/10 {
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+
+    .text-blue-700 {
+        color: #1d4ed8;
+    }
+
+    .dark\:text-blue-200 {
+        color: #bfdbfe;
+    }
+
+</style> *@@*
+<div class="hero-wrapper hero-1 position-absolute " data-bs-theme="light">
+
+<section class="pt-6 border-gray-100 from-gray-50-to-white overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-l">
+    <a class="cols-span-9 mb-2 flex items-center px-4 pb-4" href="/735408478mm">
+        <div class="relative flex-none">
+            <img alt="" class="rounded-full mr-3 size-12 flex-none overflow-hidden bg-gray-100 dark:bg-gray-900" src="https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/SXJTVYmE71adfaZsiGDsE.png">
+        </div>
+        <div class="my-1">
+            <h1 class="flex items-center text-lg/5 font-bold lg:text-xl/6">عبدالرحمن</h1>
+            <div class="inline-block rounded bg-gray-200 px-1 font-mono text-xs dark:bg-gray-800">735408478mm</div>
+        </div>
+    </a>
+    <nav>
+        <ul class="divide-y divide-gray-100 border-t border-gray-100 text-base text-gray-600">
+            <li>
+                <a href="/settings/profile" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Profile</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/account" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Account</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/authentication" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Authentication</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/organizations" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Organizations</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/billing" class="group relative flex items-center overflow-hidden px-2 py-1.5 bg-gradient-to-r from-gray-100 font-semibold text-gray-900 dark:from-gray-800 dark:to-transparent dark:text-gray-200 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Billing</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/tokens" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Access Tokens</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/keys" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">SSH and GPG Keys</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/webhooks" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Webhooks</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/papers" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Papers</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/notifications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Notifications</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/local-apps" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Local Apps and Hardware</div>
+
+
+                    <span class="ml-auto mr-1.5 rounded px-1.5 py-0.5 text-xs font-semibold leading-tight bg-blue-500/10 text-blue-700 dark:text-blue-200">NEW</span>
+                </a>
+            </li>
+            <li>
+                <a href="/settings/gated-repos" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Gated Repositories</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/content-preferences" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Content Preferences</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/connected-applications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Connected Apps</div>
+
+
+                </a>
+            </li>
+            <li>
+                <a href="/settings/theme" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                    <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Theme</div>
+
+
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
+</div> *@
+@*
+     <div class="container relative flex flex-col md:grid md:space-y-0 w-full md:grid-cols-12  space-y-4 md:gap-6 py-6">
+        <div class="md:col-span-4 lg:col-span-3">
+        <section class=" pt-6 border-gray-100 from-gray-50-to-white overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-l">
+                <a class="cols-span-9 mb-2 flex items-center px-4 pb-4" href="/735408478mm">
+                    <div class="relative flex-none">
+                        <img alt="" class="rounded-full mr-3 size-12 flex-none overflow-hidden bg-gray-100 dark:bg-gray-900" src="https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/SXJTVYmE71adfaZsiGDsE.png">
+                    </div>
+                    <div class="my-1">
+                        <h1 class="flex items-center text-lg/5 font-bold lg:text-xl/6">عبدالرحمن</h1>
+                        <div class="inline-block rounded bg-gray-200 px-1 font-mono text-xs dark:bg-gray-800">735408478mm</div>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="divide-y divide-gray-100 border-t border-gray-100 text-base text-gray-600">
+                        <li>
+                            <a href="/settings/profile" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Profile</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/account" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Account</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/authentication" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Authentication</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/organizations" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Organizations</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/billing" class="group relative flex items-center overflow-hidden px-2 py-1.5 bg-gradient-to-r from-gray-100 font-semibold text-gray-900 dark:from-gray-800 dark:to-transparent dark:text-gray-200 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Billing</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/tokens" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Access Tokens</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/keys" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">SSH and GPG Keys</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/webhooks" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Webhooks</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/papers" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Papers</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/notifications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Notifications</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/local-apps" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Local Apps and Hardware</div>
+
+
+                                <span class="ml-auto mr-1.5 rounded px-1.5 py-0.5 text-xs font-semibold leading-tight bg-blue-500/10 text-blue-700 dark:text-blue-200">NEW</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/gated-repos" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Gated Repositories</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/content-preferences" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Content Preferences</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/connected-applications" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Connected Apps</div>
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings/theme" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400 ">
+                                <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">Theme</div>
+
+
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+            <div slot="footer" class="mt-3 flex items-center gap-2 text-sm text-gray-400 lg:px-4">
+                Upgrade to
+                <a class="flex items-center border-b hover:border-gray-600 hover:text-gray-600 dark:border-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200" href="/settings/billing/subscription#subscribe">
+                    <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.198 1.961a3.164 3.164 0 0 1 1.711-.616h5.455c1.163 0 1.818.946 1.454 2.073l-1.672 5.164c-.364 1.127-1.637 2.072-2.837 2.072H1.855C.69 10.654 0 9.71.364 8.582l1.745-5.164A3.164 3.164 0 0 1 3.2 1.96Zm1.807 1.705L3.387 8.364h1.315l.513-1.49h.535c.346 0 .69-.057 1.03-.173.346-.115.652-.293.918-.534a2.2 2.2 0 0 0 .606-.94c.136-.395.15-.706.039-.932-.106-.227-.295-.388-.567-.484a2.853 2.853 0 0 0-.952-.145h-1.82Zm1.022 2.226h-.474l.428-1.243h.443c.255 0 .436.043.544.13.108.087.125.236.052.448a.977.977 0 0 1-.36.492c-.162.115-.373.173-.612.173Z" fill="currentColor"></path></svg> Pro
+                </a>
+            </div>
+        </div>
+        <style>
+
+
+        </style>
+        <section class=" pt-6 border-gray-100 md:col-span-8 lg:col-span-9 xl:col-span-9 md:px-4 py-4">
+            <div class="mb-6">
+                <div class="flex justify-between">
+                    <h1 class="flex flex-row items-center text-xl font-bold">
+                        Billing
+                    </h1>
+                </div>
+            </div>
+            <div class="border-b border-gray-100 via-white to-white dark:via-gray-950 dark:to-gray-950 md:bg-gradient-to-r">
+                <div class="-mb-px flex h-12 items-center overflow-x-auto overflow-y-hidden ">
+                    <a class="tab-alternate active" href="/settings/billing">
+                        Overview
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/payment">
+                        Payment information
+
+
+                    </a><a class="tab-alternate " href="/settings/billing/subscription">
+                        PRO Subscription
+
+
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="SVELTE_HYDRATER contents" data-target="BillingOverview" data-props="{&quot;last3periods&quot;:[],&quot;proSubscription&quot;:null,&quot;proSubscriptionEvents&quot;:[],&quot;emailUnconfirmed&quot;:true,&quot;orgs&quot;:[],&quot;invoiceCreditsCents&quot;:0,&quot;apiUrlPrefix&quot;:&quot;/api/users/billing&quot;,&quot;namespace&quot;:&quot;735408478mm&quot;,&quot;usage&quot;:{&quot;storage&quot;:{&quot;used&quot;:0,&quot;usedPrivate&quot;:0,&quot;usedPublic&quot;:0,&quot;count&quot;:0,&quot;limit&quot;:100000000000},&quot;inferenceApi&quot;:{&quot;used&quot;:0,&quot;limit&quot;:1000,&quot;duration&quot;:86400,&quot;renewal&quot;:86400,&quot;lastUpdated&quot;:&quot;2024-12-13T19:11:04.931Z&quot;},&quot;zeroGpu&quot;:{&quot;base&quot;:300,&quot;current&quot;:300,&quot;lastUpdated&quot;:&quot;2024-12-13T19:11:04.931Z&quot;}},&quot;isPro&quot;:false}">
+                <div class="mt-6 flex flex-col gap-y-6">
+                    <div class="shadow-alternate-sm mt-4 flex w-full flex-col gap-4 self-start rounded-xl border border-gray-100 px-4 pt-4">
+                        <div class="flex items-baseline justify-between">
+                            <p class="font-semibold">Usage Quota</p> <span class="ml-auto text-xs leading-none text-gray-400 sm:text-sm">
+                                <a href="/subscribe/pro" class="underline hover:text-gray-500 dark:hover:text-gray-300">Subscribe to PRO</a> to
+                                get higher limits
+                            </span>
+                        </div> <div class="grid lg:grid-cols-2 grid-rows-2 gap-5 sm:gap-x-8 sm:gap-y-7">
+                            <div class="lg:col-span-2">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1.5 whitespace-nowrap leading-none text-gray-700 sm:gap-2.5">
+                                        Private Repositories Storage
+                                        <a href="/docs/hub/storage-limits" target="_blank" class="rounded-full bg-gray-100 px-1.5 text-xs text-gray-600 hover:bg-gray-200/70 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700/60 dark:hover:text-gray-200 sm:px-2 sm:py-0.5">View doc</a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0 Bytes/100 GB <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="relative flex h-[8px] items-center rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="rounded-x-full group h-[8px] transition-all duration-100 ease-in"><div class="absolute z-10 transform rounded border bg-black p-2 font-normal leading-tight text-white shadow transition-opacity dark:bg-gray-800 top-full translate-y-2 border-b-0 left-1/2 -translate-x-1/2 text-xs w-44 hidden group-hover:block"><div class="absolute h-0 w-0 transform border-4 border-black border-x-transparent dark:border-y-gray-800 bottom-full border-t-0 left-1/2 -translate-x-1/2"></div> Used storage: 0 Bytes</div></div></div>
+                            </div> <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Zero GPU
+                                        <a href="/spaces/enzostvs/zero-gpu-spaces" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/5 <span class="sm:hidden">min</span> <span class="max-sm:hidden">minutes</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> <div class="col-span-1">
+                                <div class="mb-2.5 flex items-baseline max-sm:text-sm sm:mb-3">
+                                    <span class="flex items-center gap-1 whitespace-nowrap leading-none text-gray-700 sm:gap-1.5">
+                                        Inference API
+                                        <a href="/playground" target="_blank" class="hover:text-black dark:hover:text-white"><svg class="translate-y-px text-xs sm:text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 12 12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.75H9.75C9.88807 1.75 10 1.86193 10 2V4.25C10 4.38807 9.88807 4.5 9.75 4.5C9.61193 4.5 9.5 4.38807 9.5 4.25V2.60355L6.42678 5.67678C6.32915 5.77441 6.17085 5.77441 6.07322 5.67678C5.97559 5.57915 5.97559 5.42085 6.07322 5.32322L9.14645 2.25H7.5C7.36193 2.25 7.25 2.13807 7.25 2C7.25 1.86193 7.36193 1.75 7.5 1.75Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.5C6 2.22386 5.77614 2 5.5 2H2.69388C2.50985 2 2.33336 2.07311 2.20323 2.20323C2.0731 2.33336 2 2.50986 2 2.69389V8.93885C2 9.12288 2.0731 9.29933 2.20323 9.42953C2.33336 9.55963 2.50985 9.63273 2.69388 9.63273H8.93884C9.12287 9.63273 9.29941 9.55963 9.42951 9.42953C9.55961 9.29933 9.63271 9.12288 9.63271 8.93885V6.5C9.63271 6.22386 9.40885 6 9.13271 6C8.85657 6 8.63271 6.22386 8.63271 6.5V8.63273H3V3H5.5C5.77614 3 6 2.77614 6 2.5Z" fill="currentColor" fill-opacity="0.3"></path></svg></a>
+                                    </span> <span class="ml-auto text-xs text-gray-400">0/1,000 <span class="sm:hidden">req</span> <span class="max-sm:hidden">requests</span> <div class="relative inline-block transform translate-y-0.5"><svg class="text-xs ml-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg> </div></span>
+                                </div> <div class="h-[6px] overflow-hidden rounded-full bg-gray-200/80 ring-1 ring-gray-200/40 dark:bg-gray-800 dark:ring-gray-800"><div class="h-[6px] w-0 bg-gradient-to-t from-black to-gray-600 transition-all duration-100 ease-in dark:from-gray-200 dark:to-gray-500" style="width: 0%"></div></div>
+                            </div> <div class="from-gray-50-to-white -mx-4 flex flex-col gap-2 overflow-hidden rounded-b-xl border-t border-gray-100 bg-gradient-to-r p-4 lg:col-span-2"><dl class="flex items-baseline gap-1.5 whitespace-nowrap text-sm leading-none text-gray-700 sm:gap-2.5"><div class="flex items-center gap-1.5"><dt>Public Repositories Storage</dt> <div class="flex h-3.5 w-5 items-center justify-center rounded bg-gray-200/70 text-xs leading-none text-gray-400 dark:bg-gray-800">∞</div> </div><div class="flex-1 border-t border-dotted"></div><dd class="text-gray-400">0 Bytes</dd></dl></div>
+                        </div>
+                    </div>
+                    <div class="overview-card-wrapper px-3 py-2">Confirm your email address to use our paid services</div>
+                </div>
+            </div>
+        </section>
+    </div> *@
+@*
+<div class="hero-wrapper hero-1">
+    <div class="hero-bg-gradient">
+        </div>
+        <div class="ripple-shape">
+            <span class="ripple-1">
+                </span> <span class="ripple-2"></span> <span class="ripple-3"></span>
+                <span class="ripple-4"></span> <span class="ripple-5"></span></div>
+                <div class="container"><div class="hero-style1">
+                    <div class="row flex-row-reverse">
+                    <div class="col-lg-3"><div class="hero-thumb alltuchtopdown">
+                    <img src="assets/images/update/hero-1-1.jpg" alt="img">
+                    </div></div>
+                    <div class="col-lg-9">
+                        <h1 class="hero-title">Putting Your Money in Product Backed Projects</h1>
+                    <div class="btn-wrap"><a href="contact.html" class="btn btn2">Purchase a Token </a>
+                    <a href="contact.html" class="btn btn-two">Read Documents</a></div></div></div></div><div class="hero-countdown-wrap"><h2 class="hero-countdown-wrap-title">ICO will start in..</h2><ul class="skill-feature_list"><li><span>Value</span> of technology invested</li><li><span>Private</span> sale</li><li><h4>ICO</h4></li></ul><div class="skill-feature"><div class="progress"><div class="progress-bar" style="width: 80%"></div></div><div class="progress-value-max">100 Min $</div></div><ul class="skill-feature_list style2"><li>7.75 Min</li><li>1.5 Min</li><li>140,000 $ chosen</li></ul><div class="banner-countdown-wrap"><div class="coming-time" data-countdown="2024/8/29"><div class="time-count day"><span>00</span>Days</div><div class="time-count hour"><span>00</span>Hours</div><div class="time-count min"><span>00</span>Minute</div><div class="time-count sec"><span>00</span>Second</div></div></div></div></div></div>
+
+
+
+
+
+
+
+<div class="pt-130 overflow-hidden bg-black2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="section-title mb-45">
+                    <h2 class="title style2">Introducing Iko Crypto</h2>
+                    <p class="sec-text">True wealth in the world of virtual currencies</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-xl-4">
+                <div class="intro-wrap mt-xl-4">
+                    <h6 class="intro-wrap-title">Who We Are</h6>
+                    <p class="intro-wrap-text">We are a pioneering blockchain company focused on revolutionizing digital asset management. Our platform offers a unique blend of security and utility tokens, designed to provide value and dividends to our community of investors and users.</p>
+                </div><div class="intro-wrap">
+                    <h6 class="intro-wrap-title">Our Vision</h6>
+                    <p class="intro-wrap-text">We aim to create a decentralized ecosystem where users benefit from reduced fees and increased opportunities. By holding our tokens, you become part of a growing international network, sharing in the success of our innovative technologies.</p>
+                </div>
+                <div class="intro-wrap">
+                    <h6 class="intro-wrap-title">Long-term Growth</h6>
+                    <p class="intro-wrap-text">Our model is built for sustainable growth, attracting both individual and institutional investors. We're committed to continuous development and expansion, ensuring that our community's investment grows alongside our project's success.</p></div>
+            </div>
+            <div class="col-xl-6">
+                <div class="intro-thumb1 alltuchtopdown">
+
+                    <img src="css/ICON-removebg-preview.png" alt="img">
+                </div>
+                <div class="intro-wrap mt-50">
+                    <h6 class="intro-wrap-title">Our Mission &amp; Vision</h6><p class="intro-wrap-text">Our mission is to democratize access to blockchain technology and create a more inclusive financial ecosystem. We aim to empower individuals by providing innovative solutions that bridge the gap between traditional finance and the digital asset world.</p><p class="intro-wrap-text mt-40">We envision a future where blockchain technology is seamlessly integrated into everyday life, offering enhanced security, transparency, and efficiency across various sectors. Our goal is to be at the forefront of this transformation, driving adoption and creating value for our community.</p><p class="intro-wrap-text mt-40">Through continuous innovation and collaboration, we strive to build a sustainable and thriving ecosystem that benefits all stakeholders, from individual users to large institutions.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ *@
+
+
+@*
+<h3>Feature</h3>
+
+<div class="hero-wrapper hero-1"><div class="hero-bg-gradient"></div><div class="ripple-shape"><span class="ripple-1"></span> <span class="ripple-2"></span> <span class="ripple-3"></span> <span class="ripple-4"></span> <span class="ripple-5"></span></div><div class="container"><div class="hero-style1"><div class="row flex-row-reverse"><div class="col-lg-3"><div class="hero-thumb alltuchtopdown"><img src="assets/images/update/hero-1-1.jpg" alt="img"></div></div><div class="col-lg-9"><h1 class="hero-title">Putting Your Money in Product Backed Projects</h1><div class="btn-wrap"><a href="contact.html" class="btn btn2">Purchase a Token </a><a href="contact.html" class="btn btn-two">Read Documents</a></div></div></div></div><div class="hero-countdown-wrap"><h2 class="hero-countdown-wrap-title">ICO will start in..</h2><ul class="skill-feature_list"><li><span>Value</span> of technology invested</li><li><span>Private</span> sale</li><li><h4>ICO</h4></li></ul><div class="skill-feature"><div class="progress"><div class="progress-bar" style="width: 80%"></div></div><div class="progress-value-max">100 Min $</div></div><ul class="skill-feature_list style2"><li>7.75 Min</li><li>1.5 Min</li><li>140,000 $ chosen</li></ul><div class="banner-countdown-wrap"><div class="coming-time" data-countdown="2024/8/29"><div class="time-count day"><span>00</span>Days</div><div class="time-count hour"><span>00</span>Hours</div><div class="time-count min"><span>00</span>Minute</div><div class="time-count sec"><span>00</span>Second</div></div></div></div></div></div>
+ *@
+@*
+<h3>Feature</h3>
+<div class="wcu-area-1 pt-130 pb-140 position-relative" id="feature">
+    <div class="bg-gradient-1">
+        <img src="assets/images/update/bg-gradient1-1.jpg" alt="img">
+    </div>
+    <div class="container">
+        <div class="mb-25">
+            <div class="row gy-5">
+                <div class="col-lg-7">
+                    <div class="section-title mb-0">
+                        <h2 class="title style2">Why You Choose IKO is worth buying today?</h2>
+                        <p class="sec-text">Use the window for the planned investment and calculate the estimated<br>Iko price and your monthly dividends at a fixed time</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="wcu-thumb text-center alltuchtopdown">
+                        <img src="assets/images/update/why_1-1.png" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-5 justify-content-between">
+            <div class="col-lg-5"><div class="wcu-amount-quantity"><div class="amount"><h5 class="title">Amount invested</h5><p class="price">50,000 $</p></div><div class="quantity"><h5 class="title">Quantity Iko</h5><p class="price">500,000 Iko</p></div></div><ul class="wcu-price-progress-wrap"><li><h6 class="progress-wrap-title">Expected FOX price</h6><p class="progress-wrap-text">0.36 $</p><div class="skill-feature"><div class="progress"><div class="progress-bar" style="width: 70%"></div></div><div class="progress-value"><span>100 $</span> <span>100,000 $</span></div></div></li><li><h6 class="progress-wrap-title">Expected FOX price</h6><p class="progress-wrap-text">0.36 $</p><div class="skill-feature"><div class="progress"><div class="progress-bar" style="width: 80%"></div></div><div class="progress-value"><span>100 $</span> <span>100,000 $</span></div></div></li><li><h6 class="progress-wrap-title">Calculation time</h6><p class="progress-wrap-text">Q3 2020</p><div class="skill-feature"><div class="progress"><div class="progress-bar" style="width: 40%"></div></div><div class="progress-value"><span>100 $</span> <span>100,000 $</span></div></div></li></ul></div><div class="col-lg-6"><div class="feature-card"><div class="feature-card-icon"><img src="assets/images/update/feature-icon1-1.svg" alt="img"></div><div class="feature-card-details"><h4 class="feature-card-title">The expected value of your investment</h4><p class="feature-card-text">180,000 $</p><p class="feature-card-text">ROI = 360 %</p></div></div><div class="feature-card"><div class="feature-card-icon"><img src="assets/images/update/feature-icon1-2.svg" alt="img"></div><div class="feature-card-details"><h4 class="feature-card-title">Expected monthly dividend</h4><p class="feature-card-text">3600 FOX = 1296 $</p></div></div><div class="feature-card"><div class="feature-card-icon"><img src="assets/images/update/feature-icon1-3.svg" alt="img"></div><div class="feature-card-details"><h4 class="feature-card-title">Masternode bonus</h4><p class="feature-card-text">180,000 $</p><p class="feature-card-text">ROI = 360 %</p></div></div></div>
+        </div>
+    </div>
+</div>
+
+ *@
+@*
+
+
+<div class="pt-140 pb-140 overflow-hidden">
+    <div class="container">
+        <div class="row gy-40 justify-content-between">
+            <div class="col-xl-4 text-xl-start"><div class="section-title mb-50">
+                <h2 class="title style2">Frequently Asked Questions</h2><p class="sec-text">Have any questions? We're here to help.</p></div><div class="faq-thumb mt-60"><img src="assets/images/update/faq_1-1.png" alt="img"></div></div><div class="col-xxl-6 col-xl-8">
+                <div class="accordion-area accordion" id="faqAccordion">
+                    <div class="accordion-card active"><div class="accordion-header" id="collapse-item-1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1"><span class="number">1</span> What is blockchain technology?</button></div><div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">Blockchain is a decentralized, digital ledger technology that records transactions across a network of computers. It ensures transparency, security, and immutability of data, making it ideal for various applications beyond cryptocurrencies.</p></div></div></div><div class="accordion-card"><div class="accordion-header" id="collapse-item-2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2"><span class="number">2</span> How do I create a cryptocurrency wallet?</button></div><div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">To create a cryptocurrency wallet, choose a reputable wallet provider, download their app or visit their website, and follow the setup instructions. Make sure to securely store your private keys and recovery phrase.</p></div></div></div><div class="accordion-card"><div class="accordion-header" id="collapse-item-3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3"><span class="number">3</span> What are smart contracts?</button></div><div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They automatically enforce and execute the terms when predetermined conditions are met, without the need for intermediaries.</p></div></div></div><div class="accordion-card">
+                        <div class="accordion-header" id="collapse-item-4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4"><span class="number">4</span> What is DeFi (Decentralized Finance)?</button>
+                        </div><div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">DeFi refers to financial services and applications built on blockchain networks, operating without traditional intermediaries. It includes lending, borrowing, trading, and other financial activities, all executed through smart contracts.</p></div></div>
+                    </div><div class="accordion-card"><div class="accordion-header" id="collapse-item-5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5"><span class="number">5</span> How does blockchain ensure security?</button></div><div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">Blockchain ensures security through cryptographic techniques, decentralization, and consensus mechanisms. Each transaction is encrypted, linked to previous transactions, and verified by multiple nodes in the network, making it extremely difficult to alter or hack.</p></div></div></div><div class="accordion-card"><div class="accordion-header" id="collapse-item-6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6"><span class="number">6</span> What is the difference between public and private blockchains?</button></div><div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="collapse-item-6" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">Public blockchains are open to anyone and fully decentralized, while private blockchains restrict access to authorized participants and are often controlled by a single organization. Public blockchains offer greater transparency, while private blockchains provide more control and privacy.</p></div></div></div><div class="accordion-card"><div class="accordion-header" id="collapse-item-7"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7"><span class="number">7</span> How can businesses benefit from blockchain technology?</button></div><div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="collapse-item-7" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="faq-text">Businesses can benefit from blockchain through increased transparency, improved security, enhanced traceability, reduced costs, and streamlined processes. It can be applied to supply chain management, financial services, healthcare, and many other industries to increase efficiency and trust.</p></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *
+
+<style>
+    .bg-gradient-1 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+
+    .home-purple-gradient {
+        --tg-primary-color: #DF86AA;
+        --tg-theme-color2: #5729D6;
+        --tg-black2: #10121D;
+        --tg-secondary-color: #010314;
+        --tg-secondary-color2: #0F101E;
+    }
+
+
+  /*   body {
+        font-family: var(--tg-body-font-family);
+        font-weight: var(--tg-body-font-weight);
+        font-size: var(--tg-body-font-size);
+        line-height: var(--tg-body-line-height);
+        color: var(--tg-body-font-color);
+        font-style: normal;
+        background-color: var(--tg-black);
+    } */
+</style>
+@using BlazorASG.Data
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@*
+<h3>غرفة ممارسة اللهجة</h3>
+
+<div>
+    <section>
+        <h4>غرفة دردشة</h4>
+        <textarea @bind="@messageInput" placeholder="اكتب رسالتك هنا..." rows="4"></textarea>
+        <button @onclick="SendMessage">إرسال</button>
+        <ul>
+            @foreach (var msg in messages)
+            {
+                <li>@msg</li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <h4>حوار مع الذكاء الاصطناعي</h4>
+        <textarea @bind="@aiInput" placeholder="تحدث مع الذكاء الاصطناعي..." rows="4"></textarea>
+        <button @onclick="InteractWithAI">إرسال</button>
+        <p>@aiResponse</p>
+    </section>
+
+    <section>
+        <h4>تسجيل الصوت</h4>
+        <button @onclick="StartRecording">بدء التسجيل</button>
+        <button @onclick="StopRecording">إيقاف التسجيل</button>
+        <audio controls id="audioPlayer"></audio>
+        <button @onclick="ComparePronunciation">مقارنة النطق</button>
+        <p>@comparisonResult</p>
+    </section>
+</div> *@
+@*
+<style>
+    /* تصميم علامات التبويب */
+    .tabs {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+        .tab-btn.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+    /* شبكة التصميم */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* النسبة بين الأعمدة */
+        gap: 20px;
+        align-items: start;
+    }
+
+    /* محتوى علامات التبويب */
+    .tab-content {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .tab-section {
+        display: none;
+    }
+
+        .tab-section.active {
+            display: block;
+        }
+
+    /* تصميم قسم تسجيل الصوت */
+    .audio-section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .audio-player {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* التصاميم العامة */
+    .section-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 1em;
+        margin-top: 10px;
+    }
+
+   /*  body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+    } */
+
+</style>
+<div class="pt-140 pb-140 overflow-hidden">
+
+        <div class="container">
+            <h3 class="page-title">غرفة ممارسة اللهجة</h3>
+
+            <!-- علامات التبويب -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('chat')">غرفة دردشة</button>
+                <button class="tab-btn" onclick="showTab('ai')">حوار مع الذكاء الاصطناعي</button>
+            </div>
+
+            <!-- شبكة المحتوى -->
+            <div class="grid-container">
+                <!-- محتوى علامات التبويب -->
+                <div class="tab-content">
+                    <!-- غرفة دردشة -->
+                    <section id="chat" class="tab-section active">
+                        <h4 class="section-title">غرفة دردشة</h4>
+                        <textarea @bind="@messageInput" class="message-input" placeholder="اكتب رسالتك هنا..." rows="4"></textarea>
+                        <button class="btn send-btn" @onclick="SendMessage">إرسال</button>
+                        <ul class="message-list">
+                            @foreach (var msg in messages)
+                            {
+                                <li class="message-item">@msg</li>
+                            }
+                        </ul>
+                    </section>
+
+                    <!-- حوار مع الذكاء الاصطناعي -->
+                    <section id="ai" class="tab-section">
+                        <h4 class="section-title">حوار مع الذكاء الاصطناعي</h4>
+                        <textarea @bind="@aiInput" class="ai-input" placeholder="تحدث مع الذكاء الاصطناعي..." rows="4"></textarea>
+                        <button class="btn ai-btn" @onclick="InteractWithAI">إرسال</button>
+                        <p class="ai-response">@aiResponse</p>
+                    </section>
+                </div>
+
+                <!-- تسجيل الصوت -->
+                <section class="audio-section">
+                    <h4 class="section-title">تسجيل الصوت</h4>
+                    <button class="btn record-btn" @onclick="StartRecording">بدء التسجيل</button>
+                    <button class="btn stop-btn" @onclick="StopRecording">إيقاف التسجيل</button>
+                    <audio controls id="audioPlayer" class="audio-player"></audio>
+                    <button class="btn compare-btn" @onclick="ComparePronunciation">مقارنة النطق</button>
+                    <p class="comparison-result">@comparisonResult</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+         function showTab(tabId) {
+        // إخفاء جميع الأقسام
+        const sections = document.querySelectorAll('.tab-section');
+        sections.forEach(section => section.classList.remove('active'));
+
+        // إلغاء تحديد جميع الأزرار
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // إظهار القسم المحدد
+        document.getElementById(tabId).classList.add('active');
+        // تمييز الزر النشط
+        document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+
+
+        </script>
+<script>
+    let mediaRecorder;
+    let audioChunks = [];
+
+    window.startRecording = async () => {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = (event) => {
+            audioChunks.push(event.data);
+        };
+        mediaRecorder.start();
+    };
+
+    window.stopRecording = async () => {
+        mediaRecorder.stop();
+        return new Promise((resolve) => {
+            mediaRecorder.onstop = () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                audioChunks = [];
+                const audioUrl = URL.createObjectURL(audioBlob);
+                resolve(audioUrl);
+            };
+        });
+    };
+</script>
+
+@code {
+    private string messageInput = string.Empty;
+    private List<string> messages = new();
+    private HubConnection? chatHub;
+
+    protected override async Task OnInitializedAsync()
+    {
+        chatHub = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        chatHub.On<string>("ReceiveMessage", (message) =>
+        {
+            messages.Add(message);
+            InvokeAsync(StateHasChanged);
+        });
+
+        await chatHub.StartAsync();
+    }
+
+    private async Task SendMessage()
+    {
+        if (!string.IsNullOrWhiteSpace(messageInput))
+        {
+            await chatHub!.SendAsync("SendMessage", messageInput);
+            messageInput = string.Empty;
+        }
+    }
+
+    private string aiInput = string.Empty;
+    private string aiResponse = string.Empty;
+
+    private async Task InteractWithAI()
+    {
+        aiResponse = $"رد الذكاء الاصطناعي: {aiInput}";
+        aiInput = string.Empty;
+    }
+
+    private string comparisonResult = string.Empty;
+
+    private async Task StartRecording()
+    {
+        await JSRuntime.InvokeVoidAsync("startRecording");
+    }
+
+    private async Task StopRecording()
+    {
+        var audioUrl = await JSRuntime.InvokeAsync<string>("stopRecording");
+        await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('audioPlayer').src = '{audioUrl}'");
+    }
+
+    private async Task ComparePronunciation()
+    {
+        comparisonResult = "النطق متطابق بنسبة 80%";
+    }
+
+    public void Dispose()
+    {
+        _ = chatHub?.DisposeAsync();
+    }
+}
+<script>
+    // speech.js
+window.textToSpeech = (text) => {
+    if (!text) {
+        alert("يرجى إدخال نص لتحويله إلى صوت");
+        return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ar-SA"; // يمكنك تغيير اللغة هنا
+    utterance.rate = 1; // سرعة الصوت
+    utterance.pitch = 1; // نبرة الصوت
+
+    window.speechSynthesis.speak(utterance);
+};
+
+</script>
+<style>
+    /* تصميم النص لتحويله إلى صوت */
+    .text-to-speech-section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .message-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .convert-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .speech-to-text-section {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    button.btn-primary {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+</style>
+@inject IJSRuntime JSRuntime
+<div class="pt-140 pb-140 overflow-hidden">
+
+        <div class="container">
+<h3>تحويل النص إلى صوت</h3>
+
+<div class="text-to-speech-section">
+    <textarea @bind="textToConvert" class="form-control" placeholder="اكتب النص هنا..." rows="4"></textarea>
+    <button class="btn btn-primary mt-3" @onclick="ConvertTextToSpeech">تحويل النص إلى صوت</button>
+</div>
+</div>
+</div>
+@code {
+    private string textToConvert = string.Empty;
+
+    private async Task ConvertTextToSpeech()
+    {
+        if (!string.IsNullOrEmpty(textToConvert))
+        {
+            // استدعاء JavaScript باستخدام JS Interop
+            await JSRuntime.InvokeVoidAsync("textToSpeech", textToConvert);
+        }
+    }
+}
+
+<script>
+        // wwwroot/js/speechRecognition.js
+
+    window.startSpeechRecognition = (dotNetHelper) => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "ar-SA"; // اللغة العربية
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onresult = function(event) {
+            let finalTranscript = '';
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                }
+            }
+            // إرسال النص المحول إلى Blazor عبر JavaScript Interop
+            dotNetHelper.invokeMethodAsync('SetRecognizedText', finalTranscript);
+        };
+
+        recognition.start();
+    };
+
+</script>
+@inject IJSRuntime JSRuntime
+<div class="pt-140 pb-140 overflow-hidden">
+
+        <div class="container">
+<h3>تحويل الصوت إلى نص</h3>
+
+<div class="speech-to-text-section">
+    <button class="btn btn-primary" @onclick="StartRecognition">ابدأ التسجيل الصوتي</button>
+    <p class="mt-3">النص المحول: @recognizedText</p>
+</div>
+</div>
+</div>
+@code {
+    private string recognizedText = string.Empty;
+
+    private async Task StartRecognition()
+    {
+        // استخدام JS Interop لبدء التعرف على الصوت
+        await JSRuntime.InvokeVoidAsync("startSpeechRecognition", DotNetObjectReference.Create(this));
+    }
+
+    [JSInvokable]
+    public void SetRecognizedText(string text)
+    {
+        recognizedText = text;
+        StateHasChanged(); // تحديث واجهة المستخدم بعد تغيير النص
+    }
+}
+  *@
+@*
+ <script>
+         // wwwroot/js/speechRecognition.js
+
+    let recognition;
+
+    function initializeRecognition() {
+        // التحقق من دعم Web Speech API في المتصفح
+        if (!('webkitSpeechRecognition' in window)) {
+            alert('Web Speech API غير مدعوم في متصفحك');
+            return;
+        }
+
+        // إعداد التعرّف على الصوت
+        recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'ar-SA'; // تحديد اللغة العربية
+
+        recognition.onresult = function(event) {
+            let transcript = '';
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                transcript += event.results[i][0].transcript;
+            }
+            // إرسال النص المحول إلى Blazor
+            DotNet.invokeMethodAsync('YourBlazorApp', 'ReceiveSpeechResult', transcript);
+        };
+
+        recognition.onerror = function(event) {
+            console.error('Error occurred in speech recognition:', event.error);
+        };
+    }
+
+    function startRecognition() {
+        if (recognition) {
+            recognition.start();
+        }
+    }
+
+    function stopRecognition() {
+        if (recognition) {
+            recognition.stop();
+        }
+    }
+
+ </script>
+@inject IJSRuntime JSRuntime
+
+<h3>تحويل الصوت إلى نص</h3>
+
+<div>
+    <button @onclick="StartSpeechRecognition" class="btn btn-primary">ابدأ التحدث</button>
+    <button @onclick="StopSpeechRecognition" class="btn btn-danger">إيقاف التحدث</button>
+    <p><strong>النص المحول:</strong></p>
+    <p>@recognizedText</p>
+</div>
+
+@code {
+    private string recognizedText = string.Empty;
+
+    // بدء التعرف على الصوت
+    private async Task StartSpeechRecognition()
+    {
+        try
+        {
+            // استدعاء JavaScript لبدء التحدث
+            await JSRuntime.InvokeVoidAsync("initializeRecognition");
+            await JSRuntime.InvokeVoidAsync("startRecognition");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error starting speech recognition: " + ex.Message);
+        }
+    }
+
+    // إيقاف التعرف على الصوت
+    private async Task StopSpeechRecognition()
+    {
+        try
+        {
+            // استدعاء JavaScript لإيقاف التحدث
+            await JSRuntime.InvokeVoidAsync("stopRecognition");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error stopping speech recognition: " + ex.Message);
+        }
+    }
+
+    // استقبال النص المحول من JavaScript
+    [JSInvokable]
+    public void ReceiveSpeechResult(string transcript)
+    {
+        // تحديث النص المحول في Blazor
+        recognizedText = transcript;
+        StateHasChanged(); // لتحديث واجهة المستخدم
+    }
+}
+ *@@* 
+<style>
+
+
+        .btn {
+            --tw-border-opacity: 1;
+            border-color: rgb(229 231 235 / var(--tw-border-opacity));
+            --tw-gradient-from: #fff var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+            --tw-gradient-to: #f3f4f6 var(--tw-gradient-to-position);
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity));
+        }
+
+        .btn, .btn-widget, .btn-warning {
+            display: inline-flex;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            border-radius: .5rem;
+            border-width: 1px;
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+            padding: .25rem .75rem;
+        }
+
+        button {
+            font-weight: 400;
+        }
+
+        button, [role=button] {
+            cursor: pointer;
+        }
+
+        button, input:where([type=button]), input:where([type=reset]), input:where([type=submit]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+        }
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+    .py-3 {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+
+        .to-yellow-100 {
+            --tw-gradient-to: #fef3c7 var(--tw-gradient-to-position);
+        }
+
+        .from-yellow-50 {
+            --tw-gradient-from: #fffbeb var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(255 251 235 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+
+        .bg-gradient-to-b {
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+        }
+
+</style>
+<div class="bg-gradient-to-b to-yellow-100 from-yellow-50 navbar-collapse d-lg-flex" style="margin-top:2%" id="navbarsExample11">
+
+    <a class="navbar-brand col-lg-3 me-0" href="#">Confirm your email address to use our paid </a>
+
+    <div class="d-lg-flex col-lg-3 justify-content-lg-end" style="margin-left:40%;">
+                <button class="btn btn-two" >Button</button>
+               <button class="btn text-sm" type="submit">Resend confirmation email</button>
+    </div>
+</div> *@

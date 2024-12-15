@@ -1,0 +1,121 @@
+﻿
+@using static System.Runtime.InteropServices.JavaScript.JSType
+<style>
+    
+</style>
+<div class="row g-4 g-lg-5" style="--bs-gutter-y: 3% !important;">
+    @foreach (var plan in PricingPlans)
+    {
+        <div class="col-xl-10 mx-auto">
+            <div class="card card-hover-shadow card-hover-transition @plan.BackgroundClass rounded-4 p-4 p-sm-5" data-bs-theme="@((plan.IsDarkTheme ? "dark" : null))">
+                <div class="row g-4 g-md-0">
+                    <div class="col-md-6">
+                        <!-- Icon image -->
+                        <div class="@plan.IconBackgroundClass shadow-primary rounded-circle mb-4">
+                            <img src="@plan.Icon" class="h-40px" alt="@plan.Title image">
+                        </div>
+                        <p class="lead heading-color fw-semibold mb-2">@plan.Title</p>
+                        <!-- Pricing text -->
+                        <p class="mb-2">
+                            <span class="h1 mb-0">@plan.Price</span>
+                            @if (!string.IsNullOrEmpty(plan.Period))
+                            {
+                                <span> /@plan.Period</span>
+                            }
+                        </p>
+                        <p class="mb-0">@plan.Description</p>
+                    </div>
+
+                    <div class="col-md-5 ms-auto">
+                        <!-- Content -->
+                        <div class="card-body d-flex flex-column h-100 p-0">
+                            <span class="fw-semibold opacity-6 mb-1 mb-md-3">Quick look at all the features</span>
+                            <!-- Feature list -->
+                            @if (plan.Features != null && plan.Features.Any())
+                            {
+                                <ul class="list-group list-group-borderless mb-3">
+                                    @foreach (var feature in plan.Features)
+                                    {
+                                        <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-success me-1"></i>@feature</li>
+                                    }
+                                </ul>
+                            }
+                            <!-- Button -->
+                            <a class="@plan.ButtonClass icon-link icon-link-hover justify-content-center mb-0" href="@plan.ActionLink">
+                                @plan.ButtonText
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    public class PricingPlanPrice
+    {
+        public string Title { get; set; }
+        public string Price { get; set; }
+        public string Period { get; set; }
+        public string Description { get; set; }
+        public string Icon { get; set; }
+        public string BackgroundClass { get; set; }
+        public string IconBackgroundClass { get; set; }
+        public bool IsDarkTheme { get; set; }
+        public List<string> Features { get; set; }
+        public string ButtonText { get; set; }
+        public string ButtonClass { get; set; }
+        public string ActionLink { get; set; }
+    }
+
+    private List<PricingPlanPrice> PricingPlans = new List<PricingPlanPrice>
+    {
+        new PricingPlanPrice
+        {
+            Title = "Basic plan",
+            Price = "$59",
+            Period = "month",
+            Description = "Ideal for small teams, the Basic plan manages up to 10 projects.",
+            Icon = "assets/images/elements/rocket.png",
+            BackgroundClass = "bg-opacity-75",
+            IconBackgroundClass = "icon-xl bg-secondary-grad",
+            IsDarkTheme = false,
+            Features = new List<string> { "Customizable features", "5 user accounts", "Customizable features", "10 GB storage", "Email support" },
+            ButtonText = "Purchase",
+            ButtonClass = "btn btn-dark",
+            ActionLink = "#"
+        },
+        new PricingPlanPrice
+        {
+            Title = "Professional plan",
+            Price = "$99",
+            Period = "month",
+            Description = "Get priority email support and access to premium templates for a more comprehensive solution.",
+            Icon = "assets/images/elements/fire.png",
+            BackgroundClass = "bg-opacity-75",
+            IconBackgroundClass = "icon-xl bg-secondary-grad",
+            IsDarkTheme = false,
+            Features = new List<string> { "Access to basic features", "15 user accounts", "Customizable features", "50 GB storage", "Dedicated account manager" },
+            ButtonText = "Purchase",
+            ButtonClass = "btn btn-dark",
+            ActionLink = "/TemlatIcon"
+        },
+        new PricingPlanPrice
+        {
+            Title = "Enterprise plan",
+            Price = "Custom",
+            Period = "",
+            Description = "For businesses with unique requirements, our Custom Plan delivers a fully personalized experience.",
+            Icon = "assets/images/elements/thunder.png",
+            BackgroundClass = "bg-primary-grad",
+            IconBackgroundClass = "icon-xl bg-dark",
+            IsDarkTheme = true,
+            Features = new List<string> { "Unlimited projects", "Custom reporting and analytics", "Dedicated account manager", "Tailored support and consulting", "Personalized onboarding and training" },
+            ButtonText = "Contact us",
+            ButtonClass = "btn btn-white",
+            ActionLink = "/Feature"
+        }
+    };
+}

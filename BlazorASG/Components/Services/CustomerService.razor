@@ -1,0 +1,29 @@
+﻿
+<!-- CardIcon هنا  نجلب العنصر التالية  من صفحة  -->
+@if (Params != null)
+{
+	<div class="col">
+		<div class="card card-img-scale card-content-hover overflow-hidden rounded-4">
+			<div class="card-img-scale-wrapper">
+				<!-- Hover content -->
+				<div class="hover-content bg-blur bg-dark bg-opacity-10 p-4">
+					<!-- Hover content -->
+					<div class="z-index-2 mt-auto">
+						<h6 class="mb-1 text-white">
+							@Params.Title
+						</h6>
+						<small class="text-white">
+							@Params.PriceDisplay
+
+							</small>
+					</div>
+				</div>
+				<!-- Image -->
+				<a href="@Params.ButtonLink" class="stretched-link"><img src="@Params.ImageUrl" class="img-scale" alt="portfolio-img"></a>
+			</div>
+		</div>
+	</div>
+}
+@code {
+	[Parameter] public PricingCardModel? Params { get; set; }
+}

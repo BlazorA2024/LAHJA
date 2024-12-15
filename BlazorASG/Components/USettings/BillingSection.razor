@@ -1,0 +1,76 @@
+﻿
+<section class="pt-6 border-gray-100 md:col-span-8 lg:col-span-9 xl:col-span-9 md:px-4 py-4" style="margin-left: -14%;">
+    <div class="mb-6">
+        <div class="flex justify-between">
+            <h2 class="flex flex-row items-center text-xl font-bold">
+                Billing
+            </h2>
+        </div>
+    </div>
+    <div class="border-b border-gray-100 via-white to-white dark:via-gray-950 dark:to-gray-950 md:bg-gradient-to-r">
+        <div class="-mb-px flex h-12 items-center overflow-x-auto overflow-y-hidden">
+            <a class=" tab-alternate active @GetActiveClass("/settings/billing")" href="/settings/billing">
+                Overview
+            </a>
+            <a class="tab-alternate @GetActiveClass("/settings/billing/payment")" href="/settings/billing/payment">
+                Payment information
+            </a>
+            <a class="tab-alternate @GetActiveClass("/settings/billing/subscription")" href="/settings/billing/subscription">
+                PRO Subscription
+            </a>
+        </div>
+    </div>
+
+    <div class="SVELTE_HYDRATER contents" data-target="BillingOverview">
+        <div class="mt-6 flex flex-col gap-y-6">
+            <div class="shadow-alternate-sm mt-4 flex w-full flex-col gap-4 self-start rounded-xl border border-gray-100 px-4 pt-4">
+                <div class="flex items-baseline justify-between">
+                    <p class="font-semibold">Usage Quota</p>
+                    <span class="ml-auto text-xs leading-none text-gray-400 sm:text-sm">
+                        <a href="/subscribe/pro" class="underline hover:text-gray-500 dark:hover:text-gray-300">
+                            Subscribe to PRO
+                        </a> 
+                        to get higher limits
+                    </span>
+                </div>
+                <div class="grid lg:grid-cols-2 grid-rows-2 gap-5 sm:gap-x-8 sm:gap-y-7">
+                
+
+                        <Storage   />
+                  
+                    <UsageCard
+                        Title="Zero GPU"
+                        Value="0/5 minutes"
+                        DocumentationLink="/spaces/enzostvs/zero-gpu-spaces" />
+                    
+                    <UsageCard
+                        Title="Inference API"
+                        Value="0/1,000 requests"
+                        DocumentationLink="/playground" />
+
+                    <div class="from-gray-50-to-white -mx-4 flex flex-col gap-2 overflow-hidden rounded-b-xl border-t border-gray-100 bg-gradient-to-r p-4 lg:col-span-2">
+                        <dl class="flex items-baseline gap-1.5 whitespace-nowrap text-sm leading-none text-gray-700 sm:gap-2.5">
+                            <div class="flex items-center gap-1.5">
+                                <dt>Public Repositories Storage</dt>
+                                <div class="flex h-3.5 w-5 items-center justify-center rounded bg-gray-200/70 text-xs leading-none text-gray-400 dark:bg-gray-800">∞</div>
+                            </div>
+                            <div class="flex-1 border-t border-dotted"></div>
+                            <dd class="text-gray-400">0 Bytes</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="overview-card-wrapper px-3 py-2">Confirm your email address to use our paid services</div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private string GetActiveClass(string href)
+    {
+        return NavigationManager.Uri.Contains(href) ? "active" : string.Empty;
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+}

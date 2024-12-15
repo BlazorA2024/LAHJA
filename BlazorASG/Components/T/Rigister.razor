@@ -1,0 +1,193 @@
+﻿@* @page "/Rigister"
+ 
+@using System.ComponentModel.DataAnnotations
+@using MudBlazor
+
+
+<MudCard Class="mx-auto mt-10" Style="max-width: 400px;">
+    <MudCardContent>
+        <MudText Typo="Typo.h5" Align="Align.Center">التسجيل</MudText>
+
+        <MudForm @ref="registerForm" Valid="isValid">
+            <MudTextField @bind-Value="registerRequest.Email" Label="البريد الإلكتروني"
+                          Required="true" For="@(() => registerRequest.Email)" Type="Email" />
+            <MudTextField @bind-Value="registerRequest.Password" Label="كلمة المرور"
+                          Required="true" For="@(() => registerRequest.Password)" Type="Password" />
+            <MudTextField @bind-Value="registerRequest.PhoneNumber" Label="رقم الهاتف"
+                          Required="true" For="@(() => registerRequest.PhoneNumber)" Type="Tel" />
+       
+
+            <MudButton Variant="MudBlazor.Variant.Filled" Color="MudBlazor.Color.Primary" Class="mt-4"
+                       OnClick="HandleRegister"  >
+                تسجيل
+            </MudButton>
+        </MudForm>
+
+        <MudText Color="MudBlazor.Color.Error" Class="mt-2">@errorMessage</MudText>
+    </MudCardContent>
+</MudCard>
+
+
+@code {
+    private MudForm registerForm;
+    private bool isValid;
+    private string errorMessage;
+    private RegisterRequest registerRequest = new RegisterRequest()
+        {
+            Email = "engneerazdd@gmail.com",
+            Password = "Azdeen2024##"
+            ,
+            PhoneNumber = "+966554437878787",
+            UserRole = "user"
+        };
+    [Inject] private HttpClient Http { get; set; }
+    [Inject] IHttpClientFactory HttpClientFactory { get; set; }
+
+    private async Task HandleRegister()
+    {
+        try
+        {
+          
+            var client = HttpClientFactory.CreateClient("ApiClient");
+            var response = await client.PostAsJsonAsync("api/register", registerRequest);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // التسجيل ناجح
+                errorMessage = $"تم: {response.StatusCode}";
+            }
+            else
+            {
+                // معالجة الأخطاء
+                errorMessage = $"خطأ: {response.StatusCode}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"خطأ أثناء الاتصال: {ex.Message}";
+        }
+    }
+    public class RegisterRequest
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string PhoneNumber { get; set; }
+        public string UserRole { get; set; }
+    }
+}
+
+ *@
+ 
+@using BlazorASG.VitsModel.Auth
+ 
+
+@* <MudCard>
+    <MudCardContent>
+        <MudText Typo="Typo.h6">إنشاء حساب جديد</MudText>
+
+        <MudForm @ref="form" Model="registerRequest" OnValidSubmit="OnValidSubmit">
+            <MudTextField Label="البريد الإلكتروني" Variant="Variant.Filled" FullWidth="true" @bind-Value="registerRequest.Email" />
+            <MudTextField Label="كلمة المرور" Variant="Variant.Filled" FullWidth="true" Type="password" @bind-Value="registerRequest.Password" />
+            <MudTextField Label="تأكيد كلمة المرور" Variant="Variant.Filled" FullWidth="true" Type="password" @bind-Value="registerRequest.ConfirmPassword" />
+            <MudTextField Label="رقم الهاتف" Variant="Variant.Filled" FullWidth="true" @bind-Value="registerRequest.PhoneNumber" />
+
+            <MudSelect T="string" Label="الدور" FullWidth="true" @bind-Value="registerRequest.UserRole">
+                <MudSelectItem Value="UserRole1">مستخدم</MudSelectItem>
+                <MudSelectItem Value="UserRole1">مشرف</MudSelectItem>
+            </MudSelect>
+
+            <MudButton FullWidth="true" Color="Color.Primary" Variant="Variant.Filled" OnClick="HandleRegister">إنشاء الحساب</MudButton>
+        </MudForm>
+        <MudText Color="MudBlazor.Color.Error" Class="mt-2">@errorMessage</MudText>
+    </MudCardContent>
+</MudCard> *@
+
+       
+
+        <EditForm @ref="form" Model="registerRequest" OnValidSubmit="HandleRegister">
+            <DataAnnotationsValidator />
+            <MudCard>
+    <MudCardContent>
+            <MudTextField 
+                Label="البريد الإلكتروني" 
+                Variant="Variant.Filled" 
+                FullWidth="true" 
+                @bind-Value="registerRequest.Email" 
+                For="@(() => registerRequest.Email)" />
+            
+           
+
+            
+            <MudTextField 
+                Label="كلمة المرور" 
+                Variant="Variant.Filled" 
+                FullWidth="true" 
+                Type="password" 
+                @bind-Value="registerRequest.Password" 
+                For="@(() => registerRequest.Password)" />
+            
+            
+
+        
+            <MudTextField 
+                Label="تأكيد كلمة المرور" 
+                Variant="Variant.Filled" 
+                FullWidth="true" 
+                Type="password" 
+                @bind-Value="registerRequest.ConfirmPassword" 
+                For="@(() => registerRequest.ConfirmPassword)" />
+            
+           
+
+           
+            <MudTextField 
+                Label="رقم الهاتف" 
+                Variant="Variant.Filled" 
+                FullWidth="true" 
+                @bind-Value="registerRequest.PhoneNumber" 
+                For="@(() => registerRequest.PhoneNumber)" />
+            <MudSelect T="string" Label="الدور" FullWidth="true" @bind-Value="registerRequest.UserRole" For="@(() => registerRequest.UserRole)">
+                <MudSelectItem Value="UserRole1">مستخدم</MudSelectItem>
+                <MudSelectItem Value="UserRole2">مشرف</MudSelectItem>
+            </MudSelect>
+            
+                    <MudText Typo="Typo.subtitle2"></MudText>
+                    @if (success)
+                    {
+                        <MudText Color="Color.Success">Success</MudText>
+                    }
+                    else
+                    {
+                        <MudText Color="@Color.Error">
+                            <ValidationSummary />
+                        </MudText>
+                    }
+
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+        </MudCardActions>
+    </MudCard>
+</EditForm>
+
+
+
+
+@code {
+
+    private RegisterRequest registerRequest = new RegisterRequest();
+    public  string UserRole1 = "User";
+    public  string UserRole2 = "User";
+    private EditForm form;
+    private string errorMessage;
+    bool success;
+    private async Task HandleRegister()
+    {
+        success = true;
+        StateHasChanged();
+        }
+    
+  
+
+  
+}

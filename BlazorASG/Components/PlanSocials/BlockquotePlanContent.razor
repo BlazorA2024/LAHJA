@@ -1,0 +1,156 @@
+﻿ <section class="bg-dark overflow-hidden position-relative" data-bs-theme="dark">
+    <!-- Blur decoration -->
+    <div class="position-absolute bottom-0 end-0 mb-n8">
+        <img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-9" alt="Grad shape">
+    </div>
+
+    <div class="container position-relative">
+        <div class="row g-4" style="margin-top: 9%;">
+            <!-- Key Benefits -->
+            <div class="col-lg-4">
+                <p class="heading-color">Key benefits</p>
+                <!-- List -->
+                <ul class="list-group list-group-borderless mb-4">
+                    @foreach (var benefit in KeyBenefits)
+                    {
+                        <li class="list-group-item heading-color lead d-flex">
+                            <i class="@benefit.IconClass me-2" style="color:@benefit.IconColor"></i>@benefit.Text
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Skill sets and blockquote -->
+            <div class="col-lg-6 ms-auto">
+                <!-- Skill sets -->
+                <div class="row g-4 g-lg-6 mb-5">
+                    @foreach (var skill in SkillSets)
+                    {
+                        <div class="col-sm-6">
+                            <h3 class="border-start border-primary border-2 ps-4 mb-3">@skill.Value</h3>
+                            <p class="mb-0">@skill.Description</p>
+                        </div>
+                    }
+                </div>
+              
+
+                <!-- Blockquote -->
+                <blockquote class="d-flex">
+                    <!-- Avatar -->
+                    <div class="avatar avatar-xl flex-shrink-0">
+                        <img class="avatar-img rounded-circle" src="@Blockquote.AvatarUrl" alt="avatar">
+                    </div>
+                    <div class="ms-4">
+                        <!-- Content -->
+                        <p class="fs-6 fw-normal heading-color mb-4">"@Blockquote.Content"</p>
+                        <div class="blockquote-footer mb-0">
+                            By @Blockquote.Author
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+</section>  
+
+<style>
+    /* القواعد الأساسية */
+/* body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #f8f9fa;
+}
+
+/* خلفية القسم */
+   /*  .row > * {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+      
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x)* 0.5);
+        padding-left: calc(var(--bs-gutter-x)* 0.5);
+        margin-top: var(--bs-gutter-y);
+    } */
+
+/* تصميم التزيين الخلفي */
+    bg-dark {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+    }
+/* تصميم الفقرة */
+blockquote {
+    background-color: #343a40;
+    border-left: 4px solid #0d6efd;
+    padding: 1rem 1.5rem;
+    border-radius: 0.25rem;
+    position: relative;
+}
+
+.blockquote-footer {
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+.avatar-img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #0d6efd;
+}
+
+/* التصميم التفاعلي */
+blockquote:hover {
+    background-color: #495057;
+    transition: background-color 0.3s ease;
+}
+
+
+</style>
+@code {
+    // نموذج للبيانات الخاصة بـ Key Benefits
+    public class Benefit
+    {
+        public string IconClass { get; set; }
+        public string IconColor { get; set; }
+        public string Text { get; set; }
+    }
+
+    // نموذج للبيانات الخاصة بـ Skill Sets
+    public class Skill
+    {
+        public string Value { get; set; }
+        public string Description { get; set; }
+    }
+
+    // نموذج للبيانات الخاصة بـ Blockquote
+    public class BlockquoteContent
+    {
+        public string AvatarUrl { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
+    }
+
+    // بيانات العرض
+    private List<Benefit> KeyBenefits = new List<Benefit>
+    {
+        new Benefit { IconClass = "bi bi-wallet2", IconColor = "primary", Text = "No hidden fees" },
+        new Benefit { IconClass = "bi bi-headset", IconColor = "pink", Text = "24/7 Customer support" },
+        new Benefit { IconClass = "bi bi-rocket-takeoff", IconColor = "warning", Text = "Easy upgrade & downgrade" },
+        new Benefit { IconClass = "bi bi-clock-history", IconColor = "success", Text = "You can cancel anytime" }
+    };
+
+    private List<Skill> SkillSets = new List<Skill>
+    {
+        new Skill { Value = "2,000+", Description = "Customers have used our awesome templates since 2019" },
+        new Skill { Value = "85+", Description = "Client's projects complete all over the world" }
+    };
+
+    private BlockquoteContent Blockquote = new BlockquoteContent
+        {
+            AvatarUrl = "assets/images/elements/06.jpg",
+            Content = "We believe that it takes great people to deliver a great product",
+            Author = "Albert Schweitzer"
+        };
+}

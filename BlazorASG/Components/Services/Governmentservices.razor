@@ -1,0 +1,166 @@
+﻿
+<style>
+	/* .card.card-img-scale .img-scale {
+			-webkit-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+			-webkit-transform: scale(1.001);
+			transform: scale(1.001);
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		img, svg {
+			vertical-align: middle;
+		}
+
+		.z-index-2 {
+			z-index: 2 !important;
+		}
+
+		.mt-auto {
+			margin-top: auto !important;
+		} */
+
+	/* القاعدة العامة */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	/* تصميم علامات التبويب (Tabs) */
+	.nav.nav-underline {
+		border-bottom: 2px solid #e6e6e6;
+	}
+
+	.nav-link {
+		font-size: 16px;
+		font-weight: 600;
+		color: #6c757d;
+		transition: color 0.3s ease, border-color 0.3s ease;
+	}
+
+		.nav-link.active {
+			color: #007bff;
+			border-bottom: 2px solid #007bff;
+		}
+
+		.nav-link:hover {
+			color: #0056b3;
+			border-color: #0056b3;
+		}
+
+	/* إعدادات البطاقات (Cards) */
+	.card {
+		border: none;
+		position: relative;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+	}
+
+		.card:hover {
+			transform: scale(1.05);
+		}
+
+	/* إعدادات الصور */
+	.card-img-scale-wrapper {
+		position: relative;
+	}
+
+	.img-scale {
+		width: 100%;
+		height: auto;
+		display: block;
+		transition: transform 0.3s ease;
+	}
+
+	.card:hover .img-scale {
+		transform: scale(1.1);
+	}
+
+	/* إعدادات المحتوى عند التحويم */
+	.hover-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		z-index: 1;
+	}
+
+	.card:hover .hover-content {
+		opacity: 1;
+	}
+
+	.hover-content h6 {
+		font-size: 18px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	.hover-content small {
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	/* إعدادات التدوير للنصوص */
+	.hover-content .z-index-2 {
+		color: #fff;
+		text-align: center;
+	}
+
+	/* الحواف الدائرية */
+	.rounded-4 {
+		border-radius: 12px;
+	}
+
+	/* إعدادات الشبكة */
+	.row {
+		margin: 0 -15px;
+	}
+
+	.col {
+		padding: 15px;
+	}
+
+	/* إعدادات الترقيم (Pagination) */
+
+</style>
+
+
+<!-- CustomerService هنا  نستدعي    صفحة  -->
+@if (Params != null && Params.CardIconServicsModel != null)
+{
+	
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 g-lg-5 mb-5">
+
+        @foreach (var card in Params.CardIconServicsModel)
+        {
+            <CustomerService Params="@card" />
+        }
+    </div>
+	
+	
+}
+
+@code {
+    [Parameter] public PricingPlanModel? Params { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (Params != null && Params.IsUseStyleIneerItems)
+        {
+            Params.ClassItems += " " + PricingPlanModel.INEERCLASS;
+        }
+    }
+}

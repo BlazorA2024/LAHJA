@@ -1,0 +1,23 @@
+﻿
+ @using System.Collections.Generic
+
+<div class="col-6 col-md-2 mb-3">
+    <h5>@SectionTitle</h5>
+    <ul class="nav flex-column">
+        @foreach (var item in NavItems)
+        {
+            <li class="nav-item mb-2">
+                <a href="@item.Url" class="nav-link p-0 text-body-secondary">@item.Name</a>
+            </li>
+        }
+    </ul>
+</div>
+
+@code {
+    // المعاملات التي ستستقبلها الصفحة
+    [Parameter] public string SectionTitle { get; set; }
+    [Parameter] public List<NavItem> NavItems { get; set; } = new List<NavItem>();
+
+    // تعريف هيكل العنصر في القائمة
+   
+}

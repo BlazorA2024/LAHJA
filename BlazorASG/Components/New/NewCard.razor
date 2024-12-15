@@ -1,0 +1,155 @@
+﻿
+
+	<!-- Title and content -->
+
+@* 	<div class="position-relative" style="position:relative;background:#212529">
+		<div class="pt-130 overflow-hidden bg-black2 bg-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-6">
+
+						<div class="section-title mb-45">
+							<h2 class="title style2">Introducing Iko Crypto</h2>
+							<p class="sec-text">True wealth in the world of virtual currencies</p>
+						
+
+
+						</div>
+						
+					</div>
+					<div class="col-lg-9">
+						<div class="btn-wrap">
+							<a href="#" class="btn btn2">Purchase a Token </a>
+							<a href="#" class="btn btn-two">Read Documents</a>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-xl-4">
+						<div class="intro-wrap mt-xl-4">
+						</div>
+
+					</div>
+					<div class="col-xl-6" style="  margin-top: -13%;">
+						<div class="intro-thumb1 alltuchtopdown"><img src="css/ICON-removebg-preview.png" alt="img"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div> *@
+<!-- New قالب 2 يجلب العنصر التالية  من ملف  -->
+@if (CardTextAndIconlsList != null)
+{
+	<TiconmCaert Params="@CardTextAndIconlsList" />
+				 }
+<!-- Image -->
+
+	<div class="container mt-n7 mt-sm-n9">
+		<!-- Image -->
+		<div class="bg-body bg-opacity-10 bg-blur border border-white border-opacity-10 position-relative rounded-5 shadow-primary-lg p-2 p-sm-4">
+			<!-- Dots -->
+		
+			<!-- Images -->
+
+			<div class="row g-4 g-lg-5 rounded-4 " style="padding:5%">
+			
+				<!-- Feature item -->
+				@foreach (var cardDetai in cardDetailsL)
+
+
+
+				{
+					<Newicon Params="@cardDetai" />
+				}
+
+				<!-- Feature item -->
+
+
+			</div>
+			<!-- Decoration image -->
+			<img src="/chat-heart.png" class="position-absolute top-0 start-0 ms-8 mt-n4 d-none d-sm-block" alt="">
+		</div>
+	</div>
+
+
+@code {
+	CardTextAndIcon? CardTextAndIconlsList;
+
+
+
+	protected override void OnInitialized()
+
+
+
+	{
+
+
+
+		CardTextAndIconlsList = new CardTextAndIcon()
+			{
+				Name = "Introducing Iko Crypto",
+
+				Description = "True wealth in the world of virtual currencies",
+
+				ButtonLink = "Purchase a Token",
+				Details = "Read Documents",
+
+					Icon = new CardIcon() // يجب أن يكون النوع CardIcon وليس List<CardIconServics>
+
+
+
+				{
+					Src = "css/ICON-removebg-preview.png",
+					ClassIcon = " "
+				},
+
+
+			};
+
+	}
+
+	private List<CaerdSevicisIcon> cardDetailsL = new List<CaerdSevicisIcon>
+	{
+		new CaerdSevicisIcon
+		{Name= "Future-proof solutions"},
+		new CaerdSevicisIcon
+		{Name= "محرك تحويل النصوص الى كلام (TTS)"},
+
+		new CaerdSevicisIcon
+		{Name="Data security and compliance"}
+	};
+}
+
+@* 
+<div class="position-relative" style="position:relative;background:#212529">
+    <div class="pt-130 overflow-hidden bg-black2 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+
+                    <div class="section-title mb-45">
+                        <h2 class="title style2">Introducing Iko Crypto</h2>
+                        <p class="sec-text">True wealth in the world of virtual currencies</p>
+                        <div class="btn-wrap">
+                            <a href="contact.html" class="btn btn2">Purchase a Token </a>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-xl-4">
+                    <div class="intro-wrap mt-xl-4">
+                    </div>
+
+                </div>
+                <div class="col-xl-6" style="  margin-top: -13%;">
+                    <div class="intro-thumb1 alltuchtopdown"><img src="css/ICON-removebg-preview.png" alt="img"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@

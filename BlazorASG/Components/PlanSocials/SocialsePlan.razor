@@ -1,0 +1,527 @@
+﻿
+<style>
+    /* =======================
+               Weather Page Styling
+            ========================== */
+/* 
+    /* Section Styling */
+    .position-relative {
+        position: relative;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    /* Padding for the section */
+    .pt-xl-9 {
+        padding-top: 1rem !important;
+    }
+
+
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    /* Decoration Styling (Blur and Weather Info) */
+    .blur-9 {
+        width: 100%;
+        height: auto;
+    }
+
+    .opacity-2 {
+        opacity: 0.2; /* Low opacity for blur decoration */
+    }
+
+    .position-absolute {
+        position: absolute;
+    }
+
+    .mt-8 {
+        margin-top: 3rem;
+    }
+
+    .me-n5 {
+        margin-right: -1.5rem; /* Adjust margin for positioning */
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .d-xl-block {
+        display: block !important; /* Make the weather info visible only on XL screens */
+    }
+
+    .mx-xl-5 {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .ms-xxl-9 {
+        margin-left: 5rem;
+    }
+
+    .rotate-335 {
+        transform: rotate(335deg); /* Rotate weather decoration */
+    }
+
+    /* Title and Content Styling */
+    /* 	.inner-container {
+                text-align: center !i;
+                align-items: center;
+                margin-top: 5rem;
+                margin-bottom: 8rem;
+            } */
+
+    .inner-container {
+        text-align: center !important;
+        align-items: center !important;
+        margin-top: 5rem !important;
+        margin-bottom: 8rem !important;
+    }
+
+    .display-5 {
+        font-size: 3rem; /* Title font size */
+        font-weight: 700;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem; /* Bottom margin for title */
+    }
+
+    .w-75 {
+        width: 75%; /* Adjust the width of the paragraph */
+    }
+
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem; /* Bottom margin for paragraph */
+    }
+
+    /* Button Styling */
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue for hover */
+        }
+
+    /* Product Hero Image Section */
+    .bg-secondary-grad {
+        background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+        position: relative;
+    }
+
+    /* Curve Decoration */
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .fill-body {
+        fill: #fff;
+    }
+
+    .position-absolute.top-0.start-0 {
+        top: 0;
+        left: 0;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    /* Call Decoration (notification) */
+    .ms-n6 {
+        margin-left: -1.5rem;
+    }
+
+    .mt-n9 {
+        margin-top: -3rem;
+    }
+
+    .d-sm-block {
+        display: block !important; /* Ensure it’s visible on small screens and up */
+    }
+
+    /* Product Image Styling */
+    img.mt-n6 {
+        margin-top: -1.5rem;
+    }
+
+    img.mt-md-n8 {
+        margin-top: -3rem; /* Adjust margin for larger screens */
+        max-width: 100%; /* Ensure image scales with container */
+    }
+
+    .spanconta {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+    
+</style>
+
+<style>
+        .fill-path{
+    fill: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    }
+</style>
+
+<style>
+
+
+          .plan-wrapper {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              padding: 20px;
+
+          }
+
+          .plan-card {
+               background: #fff;
+              color: #333;
+              width: 100%;
+              max-width: 400px;
+              border-radius: 15px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              padding: 20px 30px;
+              animation: slide-in 0.5s ease-in-out;
+              background: linear-gradient(to right, #6a11cb, #2575fc);
+              font-family: 'Cairo', sans-serif;
+              color: #fff;
+              margin: 0;
+              padding: 0;
+          }
+
+
+      .card.card-hover-transition:hover {
+          -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+      }
+
+      .card.card-hover-shadow:hover {
+          -webkit-box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+          box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+      }
+
+      .card.card-hover-transition {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .card.card-hover-shadow {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+      }
+
+      p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+      }
+
+    
+     /*  .heading-color {
+          color: var(--bs-gray-900) !important;
+      } */
+
+      .fw-semibold {
+          font-weight: 600 !important;
+      }
+
+      .mb-2 {
+          margin-bottom: 0.5rem !important;
+      }
+
+      .lead {
+          font-size: 1.25rem;
+          font-weight: 500;
+      }
+
+      p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+      }
+
+      .p-0 {
+          padding: 0 !important;
+      }
+
+      .flex-column {
+          -webkit-box-orient: vertical !important;
+          -webkit-box-direction: normal !important;
+          -ms-flex-direction: column !important;
+          flex-direction: column !important;
+      }
+
+      .h-100 {
+          height: 100% !important;
+      }
+
+      .d-flex {
+          display: -webkit-box !important;
+          display: -ms-flexbox !important;
+          display: flex !important;
+      }
+
+      .card-body {
+          -webkit-box-flex: 1;
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+          padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+          color: var(--bs-card-color);
+      }
+
+      .opacity-6 {
+          opacity: 0.6 !important;
+      }
+
+      .list-group-borderless .list-group-item {
+          border: none !important;
+          padding: 0.425rem 0;
+      }
+
+      .list-group-item:first-child {
+          border-top-left-radius: inherit;
+          border-top-right-radius: inherit;
+      }
+
+
+
+      .list-group-item {
+          position: relative;
+          display: block;
+          padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+          color: var(--bs-list-group-color);
+          background-color: var(--bs-list-group-bg);
+          border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+      }
+
+
+
+      .mb-0 {
+          margin-bottom: 0 !important;
+      }
+
+      p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+      }
+
+      .bi-check-lg::before {
+          content: "\f633";
+      }
+
+      .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+          display: inline-block;
+          font-family: bootstrap-icons !important;
+          font-style: normal;
+          font-weight: normal !important;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: -.125em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+
+ 
+
+      .bg-primary-grad {
+          background: -webkit-gradient(linear, left top, left bottom, from(#543DE7), to(#7F39F8));
+          background: linear-gradient(180deg, #543DE7 0%, #7F39F8 100%);
+      }
+
+      .text-success {
+          --bs-text-opacity: 1;
+          color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+      }
+
+     .breadcrumb > .active {
+		color:aliceblue;
+	}
+
+    @* 
+     /*      [data-bs-theme=dark] {
+          /*    --bs-gray-100: #101521;
+               --bs-gray-200: #1c2130;
+          --bs-gray-300: #5f5f68;
+           --bs-gray-400: #a1a1a8;
+          --bs-gray-500: #bfc0c9;
+           --bs-gray-600: #CFD0D4;
+           --bs-gray-700: #ffffffb3;
+          --bs-gray-800: #ffffffd9;
+           --bs-gray-900: #fff;
+           --bs-body-bg: #0b0f1a;
+           --bs-body-bg-rgb: 11, 15, 26;
+           --bs-body-color: #c4c5c7;
+           --bs-heading-color: var(--bs-gray-900);
+           --bs-secondary: #1f2434; */
+           --bs-secondary-bg-rgb: 31, 36, 52;
+           --bs-border-color: rgba(255, 255, 255, 0.07);
+      } */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(240, 150, 255, 0.15)), color-stop(51%, rgba(191, 200, 252, 0.15)), to(rgba(187, 148, 255, 0.15)));
+     background: linear-gradient(90deg, rgba(240, 150, 255, 0.15) 0%, rgba(191, 200, 252, 0.15) 51%, rgba(187, 148, 255, 0.15) 100%); *@
+</style>
+<section class="bg-dark overflow-hidden position-relative" style="margin-top: -3%;" data-bs-theme="dark">
+    <!-- Decoration START -->
+    <!-- Grad blur -->
+    <div class="">
+        @if (SocialsName != null)
+        {
+            <div class="inner-container text-center mx-auto position-relative pt-4 pt-sm-5">
+                <!-- Breadcrumb -->
+         <nav class="mb-2 d-flex justify-content-center" aria-label="breadcrumb">
+				<ol class="breadcrumb breadcrumb-dark pt-0">
+						<li class="breadcrumb-item"><a href="#"> @SocialsName.Name </a></li>
+						<li class="breadcrumb-item active" aria-current="page">@SocialsName.Description </li>
+				</ol>
+			</nav>
+
+            <!-- Title -->
+            <h1 class="mb-0" style="inline-size: 31.5rem; margin-left: 20%;">
+                Affordable &amp; flexible pricing plans
+            </h1>
+        </div>
+        }
+        <!-- Decoration START -->
+     
+        <!-- Product hero image  bg-secondary  fill-path -->
+       
+    </div>
+    <span class="">
+        <svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7" style="width: 134%;" width="1920" height="254" viewBox="0 0 1920 254" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path class="" d="M556.048 176.63C371.384 97.9289 108.406 143.838 0 176.63V254H1920V0C1863.62 35.5602 1712.53 98.8233 1559.27 67.394C1406.01 35.9648 1206.33 86.6647 1125.65 115.943C1012.72 168.964 740.712 255.331 556.048 176.63Z"></path>
+        </svg>
+    </span>
+
+</section>
+
+<section class="   position-relative pt-xl-8 pb-0 mb-n4 ">
+
+    <span class="position-relative overflow-hidden pt-xl-9 pb-0 bg-dark">
+        <svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7 text-dark" fill="#000" viewBox="0 0 1950 237" style="enable-background:new 0 0 1950 237;" xml:space="preserve">
+        <path class="fill-body" d="M1949.5,236.4H0v-164c717.2-131.2,1598.5-54.7,1949.5,0V236.4z"></path>
+            </svg>
+    </span>
+
+    <!-- Clay decoration -->
+    <div class="position-absolute end-0 top-0 mt-6 me-n6 z-index-2 d-none d-md-block">
+        <img src="assets/imagesx/elements/clay-decoration.png" class="h-400px" alt="Clay-decoration">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute top-0 start-50 mt-n9 ms-n9">
+        <img src="assets/imagesx/elements/blur-decoration-2.svg" class="blur-8 opacity-1" alt="Grad shape">
+    </div>
+
+    <!-- Grad blur -->
+    <div class="position-absolute start-0 top-0">
+        <img src="assets/imagesx/elements/blur-decoration-2.svg" class="opacity-1 blur-8 h-300px rotate-335" alt="Grad shape">
+    </div>
+
+    <div class="container position-relative z-index-2 pt-4 pt-sm-5">
+        <!-- Title and content -->
+
+        <!-- Pricing box START -->
+        <CerdSocialse />
+
+        <!-- Pricing box END -->
+    </div>
+
+    <!-- Skew decoration -->
+    <span class="position-absolute bottom-0 start-0">
+        <svg class="text-dark" width="1920" height="73" viewBox="0 0 1920 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0L1920 61.5V73H0V0Z" fill="currentColor"></path>
+        </svg>
+    </span>
+</section>
+
+
+<BlockquotePlanContent />
+<style>
+    .pricing-section {
+        background-color: #6c757d;
+        position: relative;
+        padding-top: 6rem;
+        padding-bottom: 0;
+        margin-bottom: -2rem;
+    }
+
+    .icon-xl {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #6c757d, #adb5bd);
+    }
+
+    .card {
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+    .list-group {
+        list-style: none;
+        padding: 0;
+    }
+
+        .list-group li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .list-group i {
+            margin-right: 0.5rem;
+        }
+
+    .btn {
+        display: inline-block;
+        background-color: #212529;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-radius: 0.25rem;
+    }
+
+    .z-index-2 {
+        z-index: 2 !important;
+    }
+
+</style>
+@code {
+        CardIconItems? SocialsName;
+    // private PricingPlanModel PricingPlan = new();
+
+    protected override void OnInitialized()
+    {
+        SocialsName = new CardIconItems()
+            {
+                Name = "Home",
+                Description = " Pricing - v2",
+            };
+    }
+}

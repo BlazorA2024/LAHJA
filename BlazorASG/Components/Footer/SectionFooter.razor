@@ -1,0 +1,77 @@
+﻿
+<div class="position-relative" style="background: rgb(31, 36, 52)">
+
+    <footer class="py-5" style="padding:0% 8%">
+        <div class="row">
+
+            <FooterTItem SectionTitle="Section 1" NavItems="navItems" />
+            <FooterTItem SectionTitle="Section 2" NavItems="navItems" />
+            <FooterTItem SectionTitle="Section 3" NavItems="navItems" />
+            <div class="col-md-5 offset-md-1 mb-3">
+                <form @onsubmit="HandleSubscribe">
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="email" class="form-control" placeholder="Email address" @bind="email" required />
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+
+       </div>
+
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4">
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-body-emphasis" href="@TwitterLink"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="@InstagramLink"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="@FacebookLink"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
+        </div>
+
+     
+
+    </footer>
+
+</div>
+
+
+
+
+@code {
+    private string email;
+
+    private void HandleSubscribe()
+    {
+        // هنا يمكن إضافة الكود للتعامل مع الاشتراك في النشرة
+        // مثل إرسال البريد الإلكتروني إلى الخادم أو حفظه في قاعدة البيانات
+        if (string.IsNullOrEmpty(email))
+        {
+            // التعامل مع حالة البريد الإلكتروني غير المدخل
+            Console.WriteLine("Email is required.");
+        }
+        else
+        {
+            // التعامل مع الاشتراك الناجح
+            Console.WriteLine($"Subscribed with email: {email}");
+        }
+    }
+    // يمكنك تخصيص الروابط كما تريد
+    private string TwitterLink { get; set; } = "https://twitter.com";
+    private string InstagramLink { get; set; } = "https://instagram.com";
+    private string FacebookLink { get; set; } = "https://facebook.com";
+
+}
+
+@code {
+    private List<NavItem> navItems = new List<NavItem>
+    {
+        new NavItem { Name = "Home", Url = "#" },
+        new NavItem { Name = "Features", Url = "#" },
+        new NavItem { Name = "Pricing", Url = "#" },
+        new NavItem { Name = "FAQs", Url = "#" },
+        new NavItem { Name = "About", Url = "#" }
+    };
+}

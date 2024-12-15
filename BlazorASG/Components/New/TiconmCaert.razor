@@ -1,0 +1,129 @@
+﻿@* 
+@if (Paramss != null)
+{
+			<div class="@Paramss.ClassItems" style="position:relative">
+
+
+				<div class="@Paramss.ClassContainer">
+					<h1 class="textHeader">   @Paramss.Name <span class="testimonial-heading-style"> AI </span></h1>
+				<p style="padding:5%;font-size: 17px;border-left: 1px solid #6e6161">
+					We provide models that help to aid in the creation of different attack sequences
+					. You can deal with AGS models choosing the model you want ?.
+				</p>
+
+					@if (Paramss.INameFoter)
+					{
+				<MudButton Href="/chatai"
+						   Rel="nofollow noopener"
+						   Variant="Variant.Outlined"
+						   EndIcon="@Icons.Custom.Brands.GitHub"
+						   Color="Color.Primary">
+							@Paramss.NameFoter
+				</MudButton>
+					}
+			</div>
+				
+	</div>
+	@if (Paramss.CardIconServics != null)
+	{
+
+		@foreach (var ob in Paramss.CardIconServics)
+		{
+
+
+			<CardStartServicis Paramss="@ob" />
+		}
+
+	}
+}
+
+		
+		
+
+@code {
+
+	[Parameter] public CardIconItemsm? Paramss { set; get; }
+
+
+
+	protected override void OnInitialized()
+	{
+
+		if (Paramss != null && Paramss.IsUseStyleIneerItems)
+		{
+			Paramss.ClassItems += " " + CardIconItemsm.INEERCLASS;
+		}
+
+
+	}
+
+
+}
+ *@
+
+
+@if (Params != null)
+
+{
+
+	<div class="position-relative" style="position:relative;background:#212529">
+		<div class="pt-130 overflow-hidden bg-black2 bg-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-6">
+
+						<div class="section-title mb-45">
+							<h2 class="title style2">
+								@Params.Name
+								</h2>
+							<p class="sec-text">
+								@Params.Description
+								</p>
+
+
+
+						</div>
+
+					</div>
+					<div class="col-lg-9">
+						<div class="btn-wrap">
+							<a href="#" class="btn btn2">
+								@Params.ButtonLink
+								 </a>
+							<a href="#" class="btn btn-two">
+								@Params.Details
+								</a>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-xl-4">
+						<div class="intro-wrap mt-xl-4">
+						</div>
+
+					</div>
+					<div class="col-xl-6" style="  margin-top: -13%;">
+						<div class="intro-thumb1 alltuchtopdown"><img src="@Params.Icon.Src" alt="img"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+}
+@code {
+   [Parameter] public CardTextAndIcon? Params { get; set; }
+
+	// إذا كنت بحاجة إلى منطق إضافي، يمكنك إضافته هنا
+	protected override void OnInitialized()
+	{
+
+		if (Params != null && Params.IsUseStyleIneerItems)
+		{
+			Params.ClassItems += " " + CardTextAndIcon.INEERCLASS;
+		}
+
+
+	}
+}

@@ -1,0 +1,35 @@
+﻿ @page "/Logout"
+@using CardShopping.Web.Token
+@using MudBlazor
+@inject NavigationManager Navigation
+@inject TokenService TokenService
+
+
+<MudText Typo="Typo.h4">مرحبًا، تم تسجيل دخولك بنجاح!</MudText>
+<MudButton OnClick="Logoutt" Variant="MudBlazor.Variant.Filled" Color="MudBlazor.Color.Secondary">تسجيل الخروج</MudButton>
+
+@code
+{
+
+    private string token;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // استرجاع التوكن من LocalStorage
+        token = await TokenService.GetTokenAsync();
+
+        if (string.IsNullOrEmpty(token))
+        {
+          
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    private async Task Logoutt()
+    {
+         
+        await TokenService.RemoveTokenAsync();
+        Navigation.NavigateTo("/login");
+    }
+}
+

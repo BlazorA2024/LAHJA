@@ -1,0 +1,47 @@
+﻿
+@if (Params !=null)
+{
+		<ul class="nav nav-underline justify-content-center gap-sm-5 mb-4 mb-sm-6">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">
+				@Params.Name
+					</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"> @Params.ButtonLink </a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="#">
+				@Params.Description
+					</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+				@Params.ButtonText
+					</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+				@Params.Details
+					</a>
+			</li>
+		</ul>
+}
+
+@code {
+	[Parameter] public CardTextAndIcon? Params { get; set; }
+
+
+
+	// إذا كنت بحاجة إلى منطق إضافي، يمكنك إضافته هنا
+	protected override void OnInitialized()
+	{
+
+		if (Params != null && Params.IsUseStyleIneerItems)
+		{
+			Params.ClassItems += " " + CardTextAndIcon.INEERCLASS;
+		}
+
+
+	}
+}

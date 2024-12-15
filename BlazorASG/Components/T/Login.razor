@@ -1,0 +1,163 @@
+﻿@page "/login"
+@using Microsoft.Extensions.Options
+@using System.Text.Json
+@using System.ComponentModel.DataAnnotations
+@using BlazorASG.Application_Layer.Use_Cases.Auth
+@inject CreateLogin _createLogin
+@using BlazorASG.VitsModel.Auth
+@using CardShopping.Web.VitsModel
+@using MudBlazor
+
+
+@using CardShopping.Web.Token
+@inject TokenService TokenService
+ 
+
+<EditForm @ref="loginForm" Model="loginRequest" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <MudCard Class="mx-auto mt-10" Style="max-width: 500px;">
+    <MudCardContent>
+            <MudTextField @bind-Value="loginRequest.Email" Label="البريد الإلكتروني" 
+                          Required="true" For="@(() => loginRequest.Email)" 
+                          Type="Email" Variant="MudBlazor.Variant.Outlined" />
+                          
+            <MudTextField @bind-Value="loginRequest.Password" Label="كلمة المرور" 
+                          Required="true" For="@(() => loginRequest.Password)" 
+                          Type="Password" Variant="MudBlazor.Variant.Outlined" />
+            <MudText Typo="Typo.subtitle2"></MudText>
+            @if (success)
+            {
+                <MudText Color="Color.Success">Success</MudText>
+            }
+            else
+            {
+                <MudText Color="@Color.Error">
+                    <ValidationSummary />
+                </MudText>
+            }
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+        </MudCardActions>
+          
+      
+    </MudCard>
+        </EditForm>
+
+ @*         <Div Flex="Flex.AlignItems.Center" Gap="Gap.Is3">
+    <Captcha @ref="@captcha" Solved="@Solved" Validate="@Validate" Expired="Expired" />
+
+ 
+</Div>  *@ 
+        <MudText Color="MudBlazor.Color.Error" Class="mt-2">@errorMessage</MudText>
+<MudLink Href="/forgot-password">استدعاده كلمه السر</MudLink>
+ 
+
+@code {
+    private EditForm loginForm;
+    private bool isValid;
+    private string errorMessage;
+  
+    private AccessTokenResponsecs tokenResponse = null;
+    private LoginRequest loginRequest = new LoginRequest();
+
+
+
+    bool success;
+    public bool flag = false;
+    private async Task HandleRegister()
+    {
+        try
+        {
+            success = true;
+            var request = await _createLogin.Create(loginRequest);
+            if (request.Success)
+            {
+                errorMessage = request.Message;
+            }
+            else
+            {
+                errorMessage = request.Message;
+            }
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+
+            errorMessage = ex.Message;
+            StateHasChanged();
+
+        }
+
+
+    }
+
+
+    // private async Task FetchAccessTokenAsync()
+    // {
+    //     try
+    //     {
+    //         var client = HttpClientFactory.CreateClient("ApiClient");
+    //         var response = await client.PostAsJsonAsync("http://asg.tryasp.net/api/login", loginRequest);
+
+    //         // التحقق من نجاح الطلب
+    //         if (response.IsSuccessStatusCode)
+    //         {
+
+    //             tokenResponse = await response.Content.ReadFromJsonAsync<AccessTokenResponsecs>();
+    //             await TokenService.SaveTokenAsync(tokenResponse.AccessToken);
+
+    //             errorMessage = $"تم: {response.StatusCode}";
+
+
+
+    //         }
+    //         else
+    //         {
+
+    //             var errorMessage = $"التحقق من كلمة السر : {response.StatusCode}";
+
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+
+    //         errorMessage = $"خطأ أثناء الاتصال: {ex.Message}";
+    //     }
+
+
+    //     StateHasChanged();
+    // }
+
+    //[Inject] IOptions<AppSettings> AppSettings { get; set; }
+ 
+
+    private Captcha captcha;
+
+    private void Solved(CaptchaState state)
+    {
+        Console.WriteLine($"Captcha Success: {state.Valid}");
+    }
+
+    private void Expired()
+    {
+        Console.WriteLine("Captcha Expired");
+    }
+
+    private async Task<bool> Validate(CaptchaState state)
+    {
+        Console.WriteLine("Captcha Validate");
+
+       
+        return true;
+    }
+
+    private async Task Reset()
+    {
+        await captcha.Reset();
+    }
+
+     
+   
+}
+

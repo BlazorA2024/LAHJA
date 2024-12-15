@@ -1,0 +1,297 @@
+﻿
+
+<section class="pt-6 border-gray-100 from-gray-50-to-white overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-l" style="margin-left: -15%; margin-right: 37%;">
+    <a class="cols-span-9 mb-2 flex items-center px-4 pb-4" href="/">
+        <div class="relative flex-none">
+            <img alt="" class="rounded-full mr-3 size-12 flex-none overflow-hidden bg-gray-100 dark:bg-gray-900"
+                 src="https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/SXJTVYmE71adfaZsiGDsE.png">
+        </div> 
+       
+        <div class="my-1">          <h2 class="flex items-center text-lg/5 font-bold lg:text-xl/6">عبدالرحمن</h2>
+            <div class="inline-block rounded bg-gray-200 px-1 font-mono text-xs dark:bg-gray-800">735408478mm</div>
+        </div>
+    </a>
+    <nav>
+        <ul class="divide-y divide-gray-100 border-t border-gray-100 text-base text-gray-600">
+            @foreach (var item in NavItems)
+            {
+                <li>
+                    <a href="@item.Url" class="group relative flex items-center overflow-hidden px-2 py-1.5 dark:text-gray-400">
+                        <div class="block rounded px-2 py-0.5 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">@item.Label</div>
+                        @if (!string.IsNullOrEmpty(item.Badge))
+                        {
+                            <span class="ml-auto mr-1.5 rounded px-1.5 py-0.5 text-xs font-semibold leading-tight bg-blue-500/10 text-blue-700 dark:text-blue-200">@item.Badge</span>
+                        }
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</section>
+
+@code {
+    // تعريف قائمة العناصر
+    private List<NavItem> NavItems = new()
+    {
+        new NavItem { Label = "Profile", Url = "/settings/profile" },
+        new NavItem { Label = "Account", Url = "/settings/account" },
+        new NavItem { Label = "Authentication", Url = "/settings/authentication" },
+        new NavItem { Label = "Organizations", Url = "/settings/organizations" },
+        new NavItem { Label = "Billing", Url = "/settings/billing" },
+        new NavItem { Label = "Access Tokens", Url = "/settings/tokens" },
+        new NavItem { Label = "SSH and GPG Keys", Url = "/settings/keys" },
+        new NavItem { Label = "Webhooks", Url = "/settings/webhooks" },
+        new NavItem { Label = "Papers", Url = "/settings/papers" },
+        new NavItem { Label = "Notifications", Url = "/settings/notifications" },
+        new NavItem { Label = "Local Apps and Hardware", Url = "/settings/local-apps", Badge = "NEW" },
+        new NavItem { Label = "Gated Repositories", Url = "/settings/gated-repos" },
+        new NavItem { Label = "Content Preferences", Url = "/settings/content-preferences" },
+        new NavItem { Label = "Connected Apps", Url = "/settings/connected-applications" },
+        new NavItem { Label = "Theme", Url = "/settings/theme" }
+    };
+
+    // تعريف صف العنصر
+    private class NavItem
+    {
+        public string Label { get; set; }
+        public string Url { get; set; }
+        public string Badge { get; set; }
+    }
+}
+
+<style>
+    .from-gray-50-to-white, .from-gray-50-to-white:hover {
+        --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        --tw-gradient-to: #fff var(--tw-gradient-to-position);
+    }
+
+    .pt-6 {
+        padding-top: 1.5rem;
+    }
+
+    .bg-gradient-to-l {
+        background-image: linear-gradient(to left, var(--tw-gradient-stops));
+    }
+
+    .border-gray-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    }
+
+    .border {
+        border-width: 1px;
+    }
+
+    .rounded-xl {
+        border-radius: .75rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    }
+
+    .pb-4 {
+        padding-bottom: 1rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .mb-2 {
+        margin-bottom: .5rem;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+
+
+    .flex-none {
+        flex: none;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .bg-gray-100 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .flex-none {
+        flex: none;
+    }
+
+    .size-12 {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .mr-3 {
+        margin-right: .75rem;
+    }
+
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img, svg, video, canvas, audio, iframe, embed, object {
+        display: block;
+        vertical-align: middle;
+    }
+
+    .my-1 {
+        margin-top: .25rem;
+        margin-bottom: .25rem;
+    }
+
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .text-lg\/5 {
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin: 0;
+    }
+
+    .text-xs {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .font-mono {
+        font-family: IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    }
+
+    .px-1 {
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+
+    .bg-gray-200 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .text-gray-600 {
+        --tw-text-opacity: 1;
+        color: rgb(75 85 99 / var(--tw-text-opacity));
+    }
+
+    .text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .border-gray-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity));
+    }
+
+    .border-t {
+        border-top-width: 1px;
+    }
+
+    ol, ul, menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .py-1\.5 {
+        padding-top: .375rem;
+        padding-bottom: .375rem;
+    }
+
+    .px-2 {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .py-0\.5 {
+        padding-top: .125rem;
+        padding-bottom: .125rem;
+    }
+
+    .px-2 {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .rounded {
+        border-radius: .25rem;
+    }
+
+    .block {
+        display: block;
+    }
+</style>

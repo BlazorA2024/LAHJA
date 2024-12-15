@@ -1,0 +1,362 @@
+﻿<style>
+	/* =======================
+		   Weather Page Styling
+		========================== */
+
+	/* Section Styling */
+	.position-relative {
+		position: relative;
+	}
+
+	.overflow-hidden {
+		overflow: hidden;
+	}
+
+	/* Padding for the section */
+	.pt-xl-9 {
+		padding-top: 1rem !important;
+	}
+
+
+	.pb-0 {
+		padding-bottom: 0 !important;
+	}
+
+	/* Decoration Styling (Blur and Weather Info) */
+	.blur-9 {
+		width: 100%;
+		height: auto;
+	}
+
+	.opacity-2 {
+		opacity: 0.2; /* Low opacity for blur decoration */
+	}
+
+	.position-absolute {
+		position: absolute;
+	}
+
+	.mt-8 {
+		margin-top: 3rem;
+	}
+
+	.me-n5 {
+		margin-right: -1.5rem; /* Adjust margin for positioning */
+	}
+
+	.d-none {
+		display: none;
+	}
+
+	.d-xl-block {
+		display: block !important; /* Make the weather info visible only on XL screens */
+	}
+
+	.mx-xl-5 {
+		margin-left: 3rem;
+		margin-right: 3rem;
+	}
+
+	.ms-xxl-9 {
+		margin-left: 5rem;
+	}
+
+	.rotate-335 {
+		transform: rotate(335deg); /* Rotate weather decoration */
+	}
+
+	/* Title and Content Styling */
+		.inner-container {
+			text-align: center !i;
+			align-items: center;
+			margin-top: 5rem;
+			margin-bottom: 8rem;
+		} 
+
+	.inner-container {
+		text-align: center !important;
+		align-items: center !important;
+		margin-top: 5rem !important;
+		margin-bottom: 8rem !important;
+	}
+
+	.display-5 {
+		font-size: 3rem; /* Title font size */
+		font-weight: 700;
+	}
+
+	.mb-4 {
+		margin-bottom: 1.5rem; /* Bottom margin for title */
+	}
+
+	.w-75 {
+		width: 75%; /* Adjust the width of the paragraph */
+	}
+
+	.mx-auto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.mb-4 {
+		margin-bottom: 1.5rem; /* Bottom margin for paragraph */
+	}
+
+	/* Button Styling */
+	.btn-primary {
+		background-color: #007bff;
+		color: #fff;
+		padding: 0.8rem 1.5rem;
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+		.btn-primary:hover {
+			background-color: #0056b3; /* Darker blue for hover */
+		}
+
+	/* Product Hero Image Section */
+	.bg-secondary-grad {
+		background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+		position: relative;
+	}
+
+	/* Curve Decoration */
+	svg {
+		width: 100%;
+		height: auto;
+	}
+
+	.fill-body {
+		fill: #fff;
+	}
+
+	.position-absolute.top-0.start-0 {
+		top: 0;
+		left: 0;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	/* Call Decoration (notification) */
+	.ms-n6 {
+		margin-left: -1.5rem;
+	}
+
+	.mt-n9 {
+		margin-top: -3rem;
+	}
+
+	.d-sm-block {
+		display: block !important; /* Ensure it’s visible on small screens and up */
+	}
+
+	/* Product Image Styling */
+	img.mt-n6 {
+		margin-top: -1.5rem;
+	}
+
+	img.mt-md-n8 {
+		margin-top: -3rem; /* Adjust margin for larger screens */
+		max-width: 100%; /* Ensure image scales with container */
+	}
+
+	.spanconta {
+		max-width: 1200px;
+		margin: auto;
+		padding: 20px;
+	}
+
+	.breadcrumb > .active {
+		color:aliceblue;
+	}
+
+	.bg-dark h1 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 2.3;
+	}
+</style>
+
+@if (SocialsName != null)
+        {
+<section class="position-relative overflow-hidden pt-xl-9 pb-0 bg-dark">
+	<!-- Decoration START -->
+	<!-- Grad blur -->
+	<div class="">
+
+
+		<!-- Decoration START -->
+		<!-- Title -->
+		<div class="inner-container text-center mx-auto position-relative pt-4 pt-sm-5">
+			<!-- Breadcrumb -->
+			<nav class="mb-2 d-flex justify-content-center" aria-label="breadcrumb">
+				<ol class="breadcrumb breadcrumb-dark pt-0">
+						<li class="breadcrumb-item"><a href="#"> @SocialsName.Name </a></li>
+						<li class="breadcrumb-item active" aria-current="page">@SocialsName.Description </li>
+				</ol>
+			</nav>
+			<!-- Title -->
+			<h1 class="mb-5 text-white">Our Portfolio</h1>
+		</div>
+
+		<!-- Product hero image -->
+	</div>
+	<span class="">
+		<svg class="position-absolute bottom-0 start-0 mb-n1 mb-lg-n5 mb-xxl-n7" fill="#fff" viewBox="0 0 1950 237" style="enable-background:new 0 0 1950 237;" xml:space="preserve">
+		<path class="fill-body" d="M1949.5,236.4H0v-164c717.2-131.2,1598.5-54.7,1949.5,0V236.4z"></path>
+			</svg>
+	</span>
+
+</section>
+		}
+<div class="container">
+	
+	@if (SocialsMood != null)
+	{
+		<SocialsMood Params="SocialsMood" />
+	}
+
+@if (PricingPlan != null)
+{
+    <Governmentservices Params="@PricingPlan" />
+}
+	<nav aria-label="Page navigation">
+		<ul class="pagination pagination-primary-grad d-flex justify-content-center">
+			<li class="page-item disabled">
+				<a class="page-link"><i class="bi bi-chevron-left mx-n1 rtl-flip"></i></a>
+			</li>
+			<li class="page-item active" aria-current="page">
+				<span class="page-link">
+					1
+					<span class="visually-hidden">(current)</span>
+				</span>
+			</li>
+			<li class="page-item">
+				<a href="#" class="page-link">2</a>
+			</li>
+			<li class="page-item">
+				<a href="#" class="page-link">3</a>
+			</li>
+			<li class="page-item">
+				<a href="#" class="page-link">4</a>
+			</li>
+			<li class="page-item">
+				<a href="#" class="page-link" aria-label="Next page">
+					<i class="bi bi-chevron-right mx-n1 rtl-flip"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+@if (SocialsBGvision != null)
+{
+	<SocialsBGvision Params="SocialsBGvision" />
+}
+
+@code {
+	PricingPlanModel? PricingPlan;
+	CardTextAndIcon? SocialsMood;
+	CardTextAndIcon? SocialsBGvision;
+	CardIconItems? SocialsName;
+	// private PricingPlanModel PricingPlan = new();
+
+	protected override void OnInitialized()
+	{
+		SocialsName = new CardIconItems()
+            {
+				Name = "Home",
+				Description = "Portfolio",
+            };
+
+		SocialsMood = new CardTextAndIcon()
+			{
+
+				Name = "All",
+				Description = "Selected",
+				ButtonLink = "Digital",
+
+				ButtonText = "Branding",
+				Details = "Web design",
+			};
+
+		PricingPlan = new PricingPlanModel
+            {
+                IsUseStyleIneerItems = true,
+                CardIconServicsModel = new List<PricingCardModel>
+            {
+                new PricingCardModel
+                {
+                    Title = "Media mastery",
+                    PriceDisplay = "SEO",
+                  ImageUrl ="assets/images/portfolio/01.jpg",
+				  ButtonLink ="/",
+                },
+                new PricingCardModel
+                {
+
+                    Title = "Design blast",
+                    PriceDisplay = "UI/UX design",
+                  ImageUrl ="assets/images/portfolio/09.jpg",
+				ButtonLink ="/Feature",
+
+                },
+                new PricingCardModel
+                {
+
+                    Title = "Design blast",
+                    PriceDisplay = "UI/UX design",
+                  ImageUrl ="assets/images/portfolio/02.jpg",
+				  ButtonLink ="/Feature",
+                },
+				  new PricingCardModel
+				{
+					Title = "Media mastery",
+					PriceDisplay = "SEO",
+				  ImageUrl ="assets/images/portfolio/05.jpg",
+				  ButtonLink ="/Feature",
+				},
+				new PricingCardModel
+				{
+
+					Title = "Design blast",
+					PriceDisplay = "UI/UX design",
+				  ImageUrl ="assets/images/portfolio/06.jpg",
+				  ButtonLink ="/Feature",
+				},
+				new PricingCardModel
+				{
+
+					Title = "Design blast",
+					PriceDisplay = "UI/UX design",
+				  ImageUrl ="assets/images/portfolio/04.jpg",
+				  ButtonLink ="/Feature",
+				}
+            }
+            };
+		SocialsBGvision = new CardTextAndIcon()
+			{
+				ImageUrl = "assets/images/portfolio/geo-grad-pattern.svg",
+				// Name = "Ready to transform your <span class='text - primary - grad'>vision</span> into reality?",
+				// Details = "vision",
+				// Role ="into reality?",
+				Description = "No Credit Card Required",
+				ButtonText = "14 days free trial",
+
+				ButtonLink = "/Plan",
+				Details = "Let's work together",
+
+					
+			};
+		// SocialsBGvision = new CardTextAndIcon()
+		// 	{
+		// 		ImageUrl = "assets/images/portfolio/geo-grad-pattern.svg",
+		// 	};
+	}
+	
+    }
+
+
